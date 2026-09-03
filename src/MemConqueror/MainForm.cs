@@ -40,7 +40,8 @@ namespace MemConqueror
 			foreach (var proc in procs)
 			{
 				var pid = proc.Id;
-				object[] args = { pid, proc.ProcessName };
+				var name = proc.ProcessName;
+				object[] args = { pid, name };
 				if (oldIds.Count >= 1 && oldIds.Contains(pid))
 				{
 					oldIds.Remove(pid);
