@@ -19,6 +19,9 @@ namespace MemConqueror
                 var pMainMod = GetMainModule(proc);
                 dict["Path"] = pMainMod?.FileName;
                 dict["Desc"] = pMainMod?.FileVersionInfo.FileDescription;
+                dict["VirtualMem"] = proc.VirtualMemorySize64;
+                dict["PrivateMem"] = proc.PrivateMemorySize64;
+                dict["WorkingSet"] = proc.WorkingSet64;
                 return dict;
             }
             catch (Exception)
