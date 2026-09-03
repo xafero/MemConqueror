@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Management;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 // ReSharper disable UseObjectOrCollectionInitializer
 
@@ -9,6 +10,45 @@ namespace MemConqueror
 {
     public static class ProcTool
     {
+        public static Dictionary<string, object> GetWin32Info(this Process proc)
+        {
+            var handle = IntPtr.Zero;
+            try
+            {
+                const uint acc = Win32.PROCESS_QUERY_INFORMATION | Win32.PROCESS_VM_READ;
+                handle = Win32.OpenProcess(acc, false, proc.Id);
+                if (handle == IntPtr.Zero)
+                    return null;
+                var counters = new Win32.PROCESS_MEMORY_COUNTERS
+                {
+                    cb = Marshal.SizeOf(typeof(Win32.PROCESS_MEMORY_COUNTERS))
+                };
+                if (!Win32.GetProcessMemoryInfo(handle, out counters, counters.cb))
+                    return null;
+                var dict = new Dictionary<string, object>();
+                dict["PageFaultCount"] = counters.PageFaultCount;
+                dict["PagefileUsage"] = counters.PagefileUsage;
+                dict["PeakPagefileUsage"] = counters.PeakPagefileUsage;
+                dict["PeakWorkingSetSize"] = counters.PeakWorkingSetSize;
+                dict["PrivateUsage"] = counters.PrivateUsage;
+                dict["QuotaNonPagedPoolUsage"] = counters.QuotaNonPagedPoolUsage;
+                dict["QuotaPagedPoolUsage"] = counters.QuotaPagedPoolUsage;
+                dict["QuotaPeakNonPagedPoolUsage"] = counters.QuotaPeakNonPagedPoolUsage;
+                dict["QuotaPeakPagedPoolUsage"] = counters.QuotaPeakPagedPoolUsage;
+                dict["WorkingSetSize"] = counters.WorkingSetSize;
+                return dict;
+            }
+            catch (Exception)
+            {
+                // Nothing!
+            }
+            finally
+            {
+                Win32.CloseHandle(handle);
+            }
+            return null;
+        }
+
         public static Dictionary<string, object> GetNetInfo(this Process proc)
         {
             try
