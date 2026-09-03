@@ -3,21 +3,44 @@ using System.Collections.Generic;
 using System.Management;
 using System.Diagnostics;
 
+// ReSharper disable UseObjectOrCollectionInitializer
+
 namespace MemConqueror
 {
     public static class ProcTool
     {
-        public static string GetExePath(this Process proc)
+        public static Dictionary<string, object> GetNetInfo(this Process proc)
         {
             try
             {
-                var path = proc.MainModule?.FileName;
-                return path;
+                var dict = new Dictionary<string, object>();
+                dict["Pid"] = proc.Id;
+                dict["Name"] = proc.ProcessName;
+                var pMainMod = GetMainModule(proc);
+                dict["Path"] = pMainMod?.FileName;
+                dict["Desc"] = pMainMod?.FileVersionInfo.FileDescription;
+                return dict;
             }
-            catch
+            catch (Exception)
             {
-                return null;
+                // Nothing!
             }
+            return null;
+        }
+
+        private static ProcessModule GetMainModule(Process proc)
+        {
+            try
+            {
+                var main = proc.MainModule;
+                if (main?.ModuleName != null)
+                    return main;
+            }
+            catch (Exception)
+            {
+                // Nothing!
+            }
+            return null;
         }
 
         public static Dictionary<string, object> GetWmiInfo(this Process proc)
