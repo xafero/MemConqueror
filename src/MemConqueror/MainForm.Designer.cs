@@ -24,9 +24,12 @@ namespace MemConqueror
 			this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.contextMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -66,8 +69,10 @@ namespace MemConqueror
             this.NameCol});
 			this.dataGridView1.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView1.Size = new System.Drawing.Size(756, 388);
 			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
 			// 
 			// IdCol
 			// 
@@ -94,6 +99,20 @@ namespace MemConqueror
 			this.timer1.Interval = 500;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.killMenuItem});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(156, 26);
+			// 
+			// killMenuItem
+			// 
+			this.killMenuItem.Name = "killMenuItem";
+			this.killMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.killMenuItem.Text = "Kill this process";
+			this.killMenuItem.Click += new System.EventHandler(this.killMenuItem_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +125,7 @@ namespace MemConqueror
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.contextMenuStrip1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -117,5 +137,7 @@ namespace MemConqueror
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IdCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NameCol;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem killMenuItem;
 	}
 }

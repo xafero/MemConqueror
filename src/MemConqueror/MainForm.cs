@@ -25,9 +25,14 @@ namespace MemConqueror
 			RefreshProcesses();
 		}
 
+		private IEnumerable<DataGridViewRow> GetSelectedRows()
+		{
+			return dataGridView1.SelectedRows.Cast<DataGridViewRow>();
+		}
+
 		private IEnumerable<DataGridViewRow> GetRows()
 		{
-			return dataGridView1.Rows.OfType<DataGridViewRow>();
+			return dataGridView1.Rows.Cast<DataGridViewRow>();
 		}
 
 		private void RefreshProcesses()
@@ -61,6 +66,48 @@ namespace MemConqueror
 				}
 			if (isDirty)
 				dataGridView1.Sort(NameCol, ListSortDirection.Ascending);
+		}
+
+		private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			if (e.RowIndex != -1 && e.ColumnIndex != -1)
+			{
+				if (e.Button == MouseButtons.Right)
+				{
+					var grid = (sender as DataGridView);
+					var row = grid.Rows[e.RowIndex];
+					var cell = row.Cells[e.ColumnIndex];
+					grid.CurrentCell = cell;
+					var mousePos = grid.PointToClient(Cursor.Position);
+					contextMenuStrip1.Show(grid, mousePos);
+				}
+			}
+		}
+
+		private void killMenuItem_Click(object sender, EventArgs e)
+		{
+			var item = GetSelectedItem();
+			if (item == null) return;
+			ProcTool.Kill((int)item["Id"]);
+		}
+
+		private IDictionary<string, object> GetSelectedItem()
+		{
+			var sel = GetSelectedRows().FirstOrDefault();
+			if (sel == null) return null;
+			var itm = GetItem(sel);
+			if (itm == null) return null;
+			var res = (IDictionary<string, object>)itm;
+			return res;
+		}
+
+		private static object GetItem(DataGridViewRow row)
+		{
+			var item = row.DataBoundItem;
+			if (item == null)
+				item = row.Cells.Cast<DataGridViewCell>().ToDictionary(
+					k => k.OwningColumn.HeaderText, v => v.Value);
+			return item;
 		}
 	}
 }

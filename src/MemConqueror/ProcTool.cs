@@ -71,7 +71,14 @@ namespace MemConqueror
             return null;
         }
 
-        private static ProcessModule GetMainModule(Process proc)
+		public static void Kill(int pid)
+		{
+            var proc = Process.GetProcessById(pid);
+            if (proc == null) return;
+            proc.Kill();
+		}
+
+		private static ProcessModule GetMainModule(Process proc)
         {
             try
             {
