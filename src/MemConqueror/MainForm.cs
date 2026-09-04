@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -45,16 +46,17 @@ namespace MemConqueror
 			foreach (var proc in procs)
 			{
 				var pid = proc.Id;
-				var name = proc.ProcessName;
-				var virt = TxtTool.ToByteSize(proc.VirtualMemorySize64);
-				var work = TxtTool.ToByteSize(proc.WorkingSet64);
-				var priv = TxtTool.ToByteSize(proc.PrivateMemorySize64);
-				object[] args = { pid, name, virt, work, priv };
 				if (oldIds.Count >= 1 && oldIds.Contains(pid))
 				{
 					oldIds.Remove(pid);
 					continue;
 				}
+				var name = proc.ProcessName;
+				var virt = TxtTool.ToByteSize(proc.VirtualMemorySize64);
+				var work = TxtTool.ToByteSize(proc.WorkingSet64);
+				var priv = TxtTool.ToByteSize(proc.PrivateMemorySize64);
+				var path = Helper.Safe(() => proc.MainModule.FileName);
+				object[] args = { pid, name, virt, work, priv, path };
 				dataGridView1.Rows.Add(args);
 				isDirty = true;
 			}
@@ -95,6 +97,14 @@ namespace MemConqueror
 			var item = GetSelectedItem();
 			if (item == null) return;
 			ProcTool.Kill((int)item["Id"]);
+		}
+
+		private void openItsFolderToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var item = GetSelectedItem();
+			if (item == null) return;
+			var path = Path.GetDirectoryName((string)item["Path"]);
+			ProcTool.Open(path);
 		}
 
 		private IDictionary<string, object> GetSelectedItem()

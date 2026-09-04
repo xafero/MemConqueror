@@ -78,6 +78,14 @@ namespace MemConqueror
             proc.Kill();
 		}
 
+        public static void Open(string file)
+        {
+            if (string.IsNullOrWhiteSpace(file)) return;
+            var info = new ProcessStartInfo { FileName = file };
+            var proc = new Process { StartInfo = info };
+            proc.Start();
+        }
+
 		private static ProcessModule GetMainModule(Process proc)
         {
             try
