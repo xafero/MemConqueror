@@ -33,8 +33,11 @@
     <ApplicationIcon>Resources\app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ByteSizeLib">
+      <HintPath>..\lib\net40\ByteSizeLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-	<Reference Include="System.Management" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
@@ -48,10 +51,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResTool.cs" />
-	<Compile Include="TxtTool.cs" />
-	<Compile Include="Helper.cs" />
-	<Compile Include="ProcTool.cs" />
-	<Compile Include="Win32.cs" />
+    <Compile Include="TxtTool.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="ProcTool.cs" />
+    <Compile Include="Win32.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">

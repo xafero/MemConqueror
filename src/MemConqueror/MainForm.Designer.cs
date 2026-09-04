@@ -26,7 +26,9 @@ namespace MemConqueror
 			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.IdCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.VirtMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.WorkMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.PrivMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,11 +66,14 @@ namespace MemConqueror
 			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCol,
             this.NameCol,
-            this.MemCol});
+            this.VirtMemCol,
+            this.WorkMemCol,
+            this.PrivMemCol});
 			this.dataGridView1.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -101,7 +106,7 @@ namespace MemConqueror
 			// killMenuItem
 			// 
 			this.killMenuItem.Name = "killMenuItem";
-			this.killMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.killMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.killMenuItem.Text = "Kill this process";
 			this.killMenuItem.Click += new System.EventHandler(this.killMenuItem_Click);
 			// 
@@ -109,16 +114,31 @@ namespace MemConqueror
 			// 
 			this.IdCol.HeaderText = "Id";
 			this.IdCol.Name = "IdCol";
+			this.IdCol.Width = 41;
 			// 
 			// NameCol
 			// 
 			this.NameCol.HeaderText = "Name";
 			this.NameCol.Name = "NameCol";
+			this.NameCol.Width = 60;
 			// 
-			// MemCol
+			// VirtMemCol
 			// 
-			this.MemCol.HeaderText = "Used Size";
-			this.MemCol.Name = "MemCol";
+			this.VirtMemCol.HeaderText = "Virtual";
+			this.VirtMemCol.Name = "VirtMemCol";
+			this.VirtMemCol.Width = 61;
+			// 
+			// WorkMemCol
+			// 
+			this.WorkMemCol.HeaderText = "Working";
+			this.WorkMemCol.Name = "WorkMemCol";
+			this.WorkMemCol.Width = 72;
+			// 
+			// PrivMemCol
+			// 
+			this.PrivMemCol.HeaderText = "Private";
+			this.PrivMemCol.Name = "PrivMemCol";
+			this.PrivMemCol.Width = 65;
 			// 
 			// MainForm
 			// 
@@ -146,6 +166,8 @@ namespace MemConqueror
 		private System.Windows.Forms.ToolStripMenuItem killMenuItem;
 		private System.Windows.Forms.DataGridViewTextBoxColumn IdCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn NameCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MemCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn VirtMemCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn WorkMemCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PrivMemCol;
 	}
 }

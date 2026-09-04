@@ -46,7 +46,10 @@ namespace MemConqueror
 			{
 				var pid = proc.Id;
 				var name = proc.ProcessName;
-				object[] args = { pid, name };
+				var virt = TxtTool.ToByteSize(proc.VirtualMemorySize64);
+				var work = TxtTool.ToByteSize(proc.WorkingSet64);
+				var priv = TxtTool.ToByteSize(proc.PrivateMemorySize64);
+				object[] args = { pid, name, virt, work, priv };
 				if (oldIds.Count >= 1 && oldIds.Contains(pid))
 				{
 					oldIds.Remove(pid);

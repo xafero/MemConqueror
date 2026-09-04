@@ -1,3 +1,4 @@
+using ByteSizeLib;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -13,6 +14,12 @@ namespace MemConqueror
             return "(" + string.Join(", ",
                 dict.Select(x => x.Key + " = " + x.Value)
             ) + ")";
+        }
+
+        public static string ToByteSize(double value)
+        {
+            var obj = ByteSize.FromBytes(value);
+            return obj.ToString();
         }
     }
 }
