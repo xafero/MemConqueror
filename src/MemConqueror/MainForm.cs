@@ -68,7 +68,10 @@ namespace MemConqueror
 					isDirty = true;
 				}
 			if (isDirty)
+			{
 				dataGridView1.Sort(NameCol, ListSortDirection.Ascending);
+				toolStripStatusLabel1.Text = "Processes: " + dataGridView1.RowCount;
+			}
 		}
 
 		private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
