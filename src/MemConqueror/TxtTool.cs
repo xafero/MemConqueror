@@ -8,7 +8,7 @@ namespace MemConqueror
     {
         public static string ToStr(this Dictionary<string, object> dict)
         {
-            if (dict == null) 
+            if (dict == null)
                 return string.Empty;
 
             return "(" + string.Join(", ",
@@ -19,7 +19,10 @@ namespace MemConqueror
         public static string ToByteSize(double value)
         {
             var obj = ByteSize.FromBytes(value);
-            return obj.ToString();
+            var txt = obj.ToString();
+            if (txt == " b")
+                txt = '0' + txt;
+            return txt;
         }
     }
 }
