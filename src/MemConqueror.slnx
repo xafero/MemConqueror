@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="MemConqueror/MemConqueror.n.csproj" />
+  <Project Path="MemConqueror.Lib/MemConqueror.Lib.n.csproj" />
 </Solution>
