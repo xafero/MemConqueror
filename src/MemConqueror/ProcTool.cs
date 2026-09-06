@@ -57,8 +57,8 @@ namespace MemConqueror
                 dict["Pid"] = proc.Id;
                 dict["Name"] = proc.ProcessName;
                 var pMainMod = GetMainModule(proc);
-                dict["Path"] = pMainMod?.FileName;
-                dict["Desc"] = pMainMod?.FileVersionInfo.FileDescription;
+                dict["Path"] = pMainMod.FileName;
+                dict["Desc"] = pMainMod.FileVersionInfo.FileDescription;
                 dict["VirtualMem"] = proc.VirtualMemorySize64;
                 dict["PrivateMem"] = proc.PrivateMemorySize64;
                 dict["WorkingSet"] = proc.WorkingSet64;
@@ -91,7 +91,7 @@ namespace MemConqueror
             try
             {
                 var main = proc.MainModule;
-                if (main?.ModuleName != null)
+                if (main.ModuleName != null)
                     return main;
             }
             catch (Exception)
@@ -105,8 +105,9 @@ namespace MemConqueror
         {
             try
             {
-                using (var searcher = new ManagementObjectSearcher(
-                           $"SELECT * FROM Win32_Process WHERE ProcessId = {proc.Id}"))
+            	var query = string.Format("SELECT * FROM Win32_Process" +
+"            	                          WHERE ProcessId = {0}", proc.Id);
+                using (var searcher = new ManagementObjectSearcher(query))
                     foreach (var mbo in searcher.Get())
                     {
                         var dict = new Dictionary<string, object>();
