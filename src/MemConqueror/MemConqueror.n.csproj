@@ -26,10 +26,18 @@
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
     <Reference Include="System.Management" />
+    <Reference Include="Newtonsoft.Json.dll">
+      <HintPath>..\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ByteSizeLib.dll">
+      <HintPath>..\lib\net40\ByteSizeLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-windows'">
     <PackageReference Include="System.Management" Version="10.0.11" />
+    <PackageReference Include="ByteSize" Version="2.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
 
 </Project>
