@@ -15,4 +15,27 @@
     <Deterministic>False</Deterministic>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\*.ico" />
+    <EmbeddedResource Include="Resources\*.png" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="ByteSizeLib.dll">
+      <HintPath>..\lib\net40\ByteSizeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.dll">
+      <HintPath>..\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageReference Include="System.Drawing.Common" Version="10.0.11" />
+    <PackageReference Include="System.Management" Version="10.0.11" />
+    <PackageReference Include="ByteSize" Version="2.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
 </Project>
