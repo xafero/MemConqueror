@@ -31,10 +31,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="ProcTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResTool.cs" />
+    <Compile Include="TxtTool.cs" />
+    <Compile Include="Win32.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
