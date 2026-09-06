@@ -64,5 +64,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\app.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemConqueror.Lib\MemConqueror.Lib.csproj">
+      <Project>{E1F96740-CBB0-466B-84CB-3A2D2BCA7DFF}</Project>
+      <Name>MemConqueror.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
