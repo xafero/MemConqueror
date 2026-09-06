@@ -39,5 +39,9 @@
     <PackageReference Include="ByteSize" Version="2.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\MemConqueror.Lib\MemConqueror.Lib.n.csproj" />
+  </ItemGroup>
 
 </Project>
