@@ -11,4 +11,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
 </Project>
