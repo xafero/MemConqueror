@@ -122,5 +122,18 @@ namespace MemConqueror
             }
             return null;
         }
+    	
+		public static string GetModuleFile(Process proc)
+		{
+			var res = Helper.Safe(() =>
+            {
+              	var mod = proc.MainModule;
+              	if (mod == null) return null;
+              	return mod.FileName;
+            });
+			if (res == null) return null;
+			var txt = res.Replace("\\??\\", string.Empty);
+			return txt;
+		}
     }
 }

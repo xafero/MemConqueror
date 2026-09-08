@@ -60,7 +60,7 @@ namespace MemConqueror
 				var virt = TxtTool.ToByteSize(proc.VirtualMemorySize64);
 				var work = TxtTool.ToByteSize(proc.WorkingSet64);
 				var priv = TxtTool.ToByteSize(proc.PrivateMemorySize64);
-				var path = Helper.Safe(() => proc.MainModule.FileName);
+				var path = ProcTool.GetModuleFile(proc);
 				object[] args = { pid, name, virt, work, priv, path };
 				dataGridView1.Rows.Add(args);
 				isDirty = true;
