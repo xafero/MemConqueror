@@ -38,6 +38,7 @@ namespace MemConqueror
 		
 		private void ClearProcesses()
 		{
+			dataGridView1.ClearSelection();
 			dataGridView1.Rows.Clear();
 		}
 
