@@ -35,6 +35,11 @@ namespace MemConqueror
 		{
 			return dataGridView1.Rows.Cast<DataGridViewRow>();
 		}
+		
+		private void ClearProcesses()
+		{
+			dataGridView1.Rows.Clear();
+		}
 
 		private void RefreshProcesses()
 		{
@@ -134,6 +139,11 @@ namespace MemConqueror
 		private void QuitToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			Quit();
+		}
+		
+		private void RefreshToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			ClearProcesses();			
 		}
 	}
 }
