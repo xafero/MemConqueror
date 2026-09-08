@@ -125,5 +125,15 @@ namespace MemConqueror
 					k => k.OwningColumn.HeaderText, v => v.Value);
 			return item;
 		}
+		
+		private void Quit()
+		{
+			Close();
+		}
+		
+		private void QuitToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Quit();
+		}
 	}
 }
