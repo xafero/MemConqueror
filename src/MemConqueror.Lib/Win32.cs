@@ -11,10 +11,18 @@ namespace MemConqueror
         public const uint PROCESS_VM_READ = 0x0010;
 
         [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern IntPtr OpenProcess(uint access, bool inherit, int pid);
+        public static extern IntPtr OpenProcess(uint access, bool inherit, uint pid);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern bool CloseHandle(IntPtr handle);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool ReadProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress,
+            IntPtr lpBuffer, UIntPtr nSize, out UIntPtr lpNumberOfBytesRead);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern UIntPtr VirtualQueryEx(IntPtr hProcess, IntPtr lpAddress,
+                    IntPtr lpBuffer, UIntPtr dwLength);
 
         [DllImport("psapi.dll", SetLastError = true)]
         public static extern bool GetProcessMemoryInfo(IntPtr handle,

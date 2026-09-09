@@ -48,6 +48,7 @@
     <Compile Include="ResTool.cs" />
     <Compile Include="TxtTool.cs" />
     <Compile Include="Win32.cs" />
+    <Compile Include="WinFu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

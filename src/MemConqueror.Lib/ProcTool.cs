@@ -16,7 +16,7 @@ namespace MemConqueror
             try
             {
                 const uint acc = Win32.PROCESS_QUERY_INFORMATION | Win32.PROCESS_VM_READ;
-                handle = Win32.OpenProcess(acc, false, proc.Id);
+                handle = Win32.OpenProcess(acc, false, (uint)proc.Id);
                 if (handle == IntPtr.Zero)
                     return null;
                 var counters = new Win32.PROCESS_MEMORY_COUNTERS
