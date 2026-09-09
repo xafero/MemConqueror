@@ -428,3 +428,4 @@ FodyWeavers.xsd
 *.msm
 *.msp
 /src/.idea/
+/src/dist/
