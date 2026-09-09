@@ -31,6 +31,7 @@ namespace MemConqueror
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openItsFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.goIntoMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -93,6 +94,7 @@ namespace MemConqueror
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView1.Size = new System.Drawing.Size(756, 407);
 			this.dataGridView1.TabIndex = 0;
+			this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1CellDoubleClick);
 			this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
 			// 
 			// IdCol
@@ -150,23 +152,31 @@ namespace MemConqueror
 			// 
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.killMenuItem,
-									this.openItsFolderToolStripMenuItem});
+									this.openItsFolderToolStripMenuItem,
+									this.goIntoMemoryToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(161, 92);
 			// 
 			// killMenuItem
 			// 
 			this.killMenuItem.Name = "killMenuItem";
-			this.killMenuItem.Size = new System.Drawing.Size(155, 22);
+			this.killMenuItem.Size = new System.Drawing.Size(160, 22);
 			this.killMenuItem.Text = "Kill this process";
 			this.killMenuItem.Click += new System.EventHandler(this.killMenuItem_Click);
 			// 
 			// openItsFolderToolStripMenuItem
 			// 
 			this.openItsFolderToolStripMenuItem.Name = "openItsFolderToolStripMenuItem";
-			this.openItsFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.openItsFolderToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
 			this.openItsFolderToolStripMenuItem.Text = "Open its folder";
 			this.openItsFolderToolStripMenuItem.Click += new System.EventHandler(this.openItsFolderToolStripMenuItem_Click);
+			// 
+			// goIntoMemoryToolStripMenuItem
+			// 
+			this.goIntoMemoryToolStripMenuItem.Name = "goIntoMemoryToolStripMenuItem";
+			this.goIntoMemoryToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+			this.goIntoMemoryToolStripMenuItem.Text = "Go into memory";
+			this.goIntoMemoryToolStripMenuItem.Click += new System.EventHandler(this.GoIntoMemoryToolStripMenuItemClick);
 			// 
 			// statusStrip1
 			// 
@@ -223,7 +233,7 @@ namespace MemConqueror
 			// 
 			this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
 			this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
@@ -250,6 +260,7 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem goIntoMemoryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;

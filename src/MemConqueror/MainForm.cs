@@ -146,5 +146,20 @@ namespace MemConqueror
 		{
 			ClearProcesses();			
 		}
+		
+		private void GoIntoMemoryToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			SwitchToMemory();
+		}
+		
+		private void DataGridView1CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			SwitchToMemory();
+		}
+		
+		private void SwitchToMemory()
+		{
+			tabControl1.SelectedIndex = 1;
+		}		
 	}
 }
