@@ -165,13 +165,20 @@ namespace MemConqueror
 			RefreshMemory();
 		}
 		
+		private int lastProcId;
+		
 		private void RefreshMemory()
 		{
 			var item = GetSelectedItem();
-			var procId = (int)item["Id"];
+			var procId = lastProcId = (int)item["Id"];
 			var procName = (string)item["Name"];
 			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
 			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
+		}
+		
+		private void DumpBtnClick(object sender, EventArgs e)
+		{
+			MemTool.DumpAllMem(lastProcId);
 		}
 	}
 }

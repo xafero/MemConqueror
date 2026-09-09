@@ -43,6 +43,7 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dumpBtn = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -141,6 +142,7 @@ namespace MemConqueror
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.dumpBtn);
 			this.tabPage2.Controls.Add(this.groupBox1);
 			this.tabPage2.Controls.Add(this.listBox1);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -281,6 +283,16 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
+			// dumpBtn
+			// 
+			this.dumpBtn.Location = new System.Drawing.Point(394, 38);
+			this.dumpBtn.Name = "dumpBtn";
+			this.dumpBtn.Size = new System.Drawing.Size(80, 23);
+			this.dumpBtn.TabIndex = 4;
+			this.dumpBtn.Text = "Dump to file";
+			this.dumpBtn.UseVisualStyleBackColor = true;
+			this.dumpBtn.Click += new System.EventHandler(this.DumpBtnClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +318,7 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button dumpBtn;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label idLbl;
 		private System.Windows.Forms.Label nameLbl;
