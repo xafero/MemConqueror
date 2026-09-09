@@ -43,13 +43,14 @@
   <ItemGroup>
     <Compile Include="Helper.cs" />
     <Compile Include="JsonTool.cs" />
+    <Compile Include="MemGot.cs" />
+    <Compile Include="MemInfo.cs" />
     <Compile Include="MemTool.cs" />
     <Compile Include="ProcTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResTool.cs" />
     <Compile Include="TxtTool.cs" />
     <Compile Include="Win32.cs" />
-    <Compile Include="WinFu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

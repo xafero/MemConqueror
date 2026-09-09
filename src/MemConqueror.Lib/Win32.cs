@@ -7,6 +7,29 @@ namespace MemConqueror
 {
     public static class Win32
     {
+    			/* State of the pages */
+		public const int MEM_COMMIT = 0x1000;
+		public const int MEM_FREE = 0x10000;
+		public const int MEM_RESERVE = 0x2000;
+
+		/* Type of the pages */
+		public const int MEM_IMAGE = 0x1000000;
+		public const int MEM_MAPPED = 0x40000;
+		public const int MEM_PRIVATE = 0x20000;
+    	
+    			private const uint MEM_TYPE_MEM_PRIVATE = 131072u;
+		private const uint MEM_TYPE_MEM_MAPPED = 262144u;
+		private const uint MEM_TYPE_MEM_IMAGE = 16777216u;
+
+		private const uint MEM_STATE_MEM_RESERVE = 8192u;
+		private const uint MEM_STATE_MEM_FREE = 65536u;
+		private const uint MEM_STATE_MEM_COMMIT = 4096u;
+
+		public const uint PROCESS_VM_READ = 16u;
+		public const uint PROCESS_QUERY_INFORMATION = 1024u;
+		public const uint PROCESS_VM_OPERATION = 8u;
+		public const uint PROCESS_VM_WRITE = 32u;
+
         public const uint PROCESS_QUERY_INFORMATION = 0x0400;
         public const uint PROCESS_VM_READ = 0x0010;
 

@@ -178,7 +178,7 @@ namespace MemConqueror
 		
 		private void DumpBtnClick(object sender, EventArgs e)
 		{
-			MemTool.DumpAllMem(lastProcId);
+			MemTool.DumpAllMem((uint)lastProcId);
 		}
 	}
 }
