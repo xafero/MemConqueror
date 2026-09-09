@@ -27,6 +27,10 @@ namespace MemConqueror
 			this.PrivMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PathCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.idLbl = new System.Windows.Forms.Label();
+			this.nameLbl = new System.Windows.Forms.Label();
+			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +46,8 @@ namespace MemConqueror
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.tabPage2.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -135,6 +141,8 @@ namespace MemConqueror
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.groupBox1);
+			this.tabPage2.Controls.Add(this.listBox1);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -142,6 +150,42 @@ namespace MemConqueror
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Memory";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.idLbl);
+			this.groupBox1.Controls.Add(this.nameLbl);
+			this.groupBox1.Location = new System.Drawing.Point(15, 17);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(355, 60);
+			this.groupBox1.TabIndex = 3;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Selected process";
+			// 
+			// idLbl
+			// 
+			this.idLbl.Location = new System.Drawing.Point(19, 26);
+			this.idLbl.Name = "idLbl";
+			this.idLbl.Size = new System.Drawing.Size(64, 16);
+			this.idLbl.TabIndex = 1;
+			this.idLbl.Text = "Id:";
+			// 
+			// nameLbl
+			// 
+			this.nameLbl.AutoEllipsis = true;
+			this.nameLbl.Location = new System.Drawing.Point(89, 26);
+			this.nameLbl.Name = "nameLbl";
+			this.nameLbl.Size = new System.Drawing.Size(243, 20);
+			this.nameLbl.TabIndex = 2;
+			this.nameLbl.Text = "Name:";
+			// 
+			// listBox1
+			// 
+			this.listBox1.FormattingEnabled = true;
+			this.listBox1.Location = new System.Drawing.Point(15, 96);
+			this.listBox1.Name = "listBox1";
+			this.listBox1.Size = new System.Drawing.Size(157, 303);
+			this.listBox1.TabIndex = 0;
 			// 
 			// timer1
 			// 
@@ -252,6 +296,8 @@ namespace MemConqueror
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.tabPage2.ResumeLayout(false);
+			this.groupBox1.ResumeLayout(false);
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
@@ -260,6 +306,10 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Label idLbl;
+		private System.Windows.Forms.Label nameLbl;
+		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.ToolStripMenuItem goIntoMemoryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;

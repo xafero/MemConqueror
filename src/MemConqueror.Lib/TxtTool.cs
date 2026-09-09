@@ -24,5 +24,12 @@ namespace MemConqueror
                 txt = '0' + txt;
             return txt;
         }
+    	
+		public static string SplitUp(string text, char sep)
+		{
+			var parts = text.Split(sep);
+			var tmp = parts[0] + sep;
+			return tmp;
+		}
     }
 }

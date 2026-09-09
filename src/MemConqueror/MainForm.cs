@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
+using MemConqueror.Lib;
+
 namespace MemConqueror
 {
 	public partial class MainForm : Form
@@ -160,6 +162,16 @@ namespace MemConqueror
 		private void SwitchToMemory()
 		{
 			tabControl1.SelectedIndex = 1;
-		}		
+			RefreshMemory();
+		}
+		
+		private void RefreshMemory()
+		{
+			var item = GetSelectedItem();
+			var procId = (int)item["Id"];
+			var procName = (string)item["Name"];
+			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
+			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
+		}
 	}
 }
