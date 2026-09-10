@@ -4,11 +4,13 @@ namespace MemConqueror.Lib
 {
 	public class MemReader : IDisposable
 	{
+		private uint _pid;
 		private IntPtr _handle;
+		private string _pName;
 		
-		public MemReader(uint pid)
+		public MemReader(uint pid, bool rw = false)
 		{
-			_handle = Win32.OpenProcess(0, false, pid);
+			_handle = MemTool.OpenProc(_pid = pid, out _pName, rw);
 		}
 			
 		public void Dispose()
@@ -22,7 +24,7 @@ namespace MemConqueror.Lib
 		
 		public override string ToString()
 		{
-			return string.Format("[MemReader] handle={0:X8}", _handle);
+			return string.Format("[MR] Id={0}, Handle={1}, Name={2}", _pid, _handle, _pName);
 		}
 	}
 }
