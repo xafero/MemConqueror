@@ -27,6 +27,7 @@ namespace MemConqueror
 			this.PrivMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PathCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.dumpBtn = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.idLbl = new System.Windows.Forms.Label();
 			this.nameLbl = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.dumpBtn = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -153,6 +153,16 @@ namespace MemConqueror
 			this.tabPage2.Text = "Memory";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// dumpBtn
+			// 
+			this.dumpBtn.Location = new System.Drawing.Point(394, 38);
+			this.dumpBtn.Name = "dumpBtn";
+			this.dumpBtn.Size = new System.Drawing.Size(80, 23);
+			this.dumpBtn.TabIndex = 4;
+			this.dumpBtn.Text = "Dump to file";
+			this.dumpBtn.UseVisualStyleBackColor = true;
+			this.dumpBtn.Click += new System.EventHandler(this.DumpBtnClick);
+			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.idLbl);
@@ -186,7 +196,7 @@ namespace MemConqueror
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.Location = new System.Drawing.Point(15, 96);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(157, 303);
+			this.listBox1.Size = new System.Drawing.Size(733, 303);
 			this.listBox1.TabIndex = 0;
 			// 
 			// timer1
@@ -282,16 +292,6 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
-			// 
-			// dumpBtn
-			// 
-			this.dumpBtn.Location = new System.Drawing.Point(394, 38);
-			this.dumpBtn.Name = "dumpBtn";
-			this.dumpBtn.Size = new System.Drawing.Size(80, 23);
-			this.dumpBtn.TabIndex = 4;
-			this.dumpBtn.Text = "Dump to file";
-			this.dumpBtn.UseVisualStyleBackColor = true;
-			this.dumpBtn.Click += new System.EventHandler(this.DumpBtnClick);
 			// 
 			// MainForm
 			// 

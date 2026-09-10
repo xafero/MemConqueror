@@ -174,6 +174,12 @@ namespace MemConqueror
 			var procName = (string)item["Name"];
 			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
 			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
+			
+			foreach (var it in MemTool.ReadAll((uint)procId))
+			{
+				var txt = MemTool.ToStr(it);
+				this.listBox1.Items.Add(txt);
+			}
 		}
 		
 		private void DumpBtnClick(object sender, EventArgs e)
