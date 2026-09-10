@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using MEMORY_BASIC_INFORMATION = MemConqueror.Lib.MemInfo;
 
 namespace MemConqueror.Lib
 {
@@ -16,7 +18,22 @@ namespace MemConqueror.Lib
 
 		public static IEnumerable<MemGot> ReadAll()
 		{
+			IntPtr mbiPtr = AllocMbi();
+			try
+			{
+				
+			}
+			finally
+			{
+				Marshal.FreeHGlobal(mbiPtr);
+			}
+		}
 
+		private static IntPtr AllocMbi()
+		{
+			Type mbiType = typeof(MEMORY_BASIC_INFORMATION);
+			int mbiSize = Marshal.SizeOf(mbiType);
+			return Marshal.AllocHGlobal(mbiSize);
 		}
 
 		public void Dispose()
