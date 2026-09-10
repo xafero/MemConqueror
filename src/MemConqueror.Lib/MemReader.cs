@@ -5,8 +5,8 @@ namespace MemConqueror.Lib
 	public class MemReader : IDisposable
 	{
 		private uint _pid;
-		private IntPtr _handle;
 		private string _pName;
+		private IntPtr _handle;
 		
 		public MemReader(uint pid, bool rw = false)
 		{
@@ -24,7 +24,7 @@ namespace MemConqueror.Lib
 		
 		public override string ToString()
 		{
-			return string.Format("[MR] Id={0}, Handle={1}, Name={2}", _pid, _handle, _pName);
+			return string.Format("[MR] id={0}, name={1}, handle={2}", _pid, _pName, _handle);
 		}
 	}
 }
