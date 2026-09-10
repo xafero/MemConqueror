@@ -45,6 +45,7 @@
     <Compile Include="JsonTool.cs" />
     <Compile Include="MemGot.cs" />
     <Compile Include="MemInfo.cs" />
+    <Compile Include="MemReader.cs" />
     <Compile Include="MemTool.cs" />
     <Compile Include="ProcTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
