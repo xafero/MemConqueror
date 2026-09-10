@@ -193,10 +193,13 @@ namespace MemConqueror
 			// 
 			// listBox1
 			// 
+			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(15, 96);
+			this.listBox1.Location = new System.Drawing.Point(15, 83);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(733, 303);
+			this.listBox1.Size = new System.Drawing.Size(737, 329);
 			this.listBox1.TabIndex = 0;
 			// 
 			// timer1
