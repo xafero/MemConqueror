@@ -61,7 +61,14 @@ namespace MemConqueror.Lib
 			return null;
 		}
 
-		public IEnumerable<MemGot> ReadAll()
+		protected virtual IMemGot Get(MEMORY_BASIC_INFORMATION mbi)
+		{
+			var buffer = Read(mbi);
+			if (buffer == null) return null;
+			return new MemGot(_pName, mbi, buffer);
+		}
+
+		public IEnumerable<IMemGot> ReadAll()
 		{
 			Type mbiType = typeof(MEMORY_BASIC_INFORMATION);
 			int mbiSize = Marshal.SizeOf(mbiType);
@@ -74,9 +81,8 @@ namespace MemConqueror.Lib
 					var mbi = (MEMORY_BASIC_INFORMATION)Marshal.PtrToStructure(mbiPtr, mbiType);
 					if (IsUsable(mbi))
 					{
-						var buffer = Read(mbi);
-						if (buffer != null)
-							yield return new MemGot(_pName, mbi, buffer);
+						var it = Get(mbi);
+						if (it != null) yield return it;
 					}
 					long next = mbi.BaseAddress.ToInt64() + (long)mbi.RegionSize;
 					if (next <= address.ToInt64())
