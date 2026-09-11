@@ -177,11 +177,9 @@ namespace MemConqueror
 			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
 			lastMem = new LazyReader((uint)procId);
 			
+			listBox1.Items.Clear();
 			foreach (var it in lastMem.ReadAll())
-			{
-				var txt = MemTool.ToStr(it);
-				this.listBox1.Items.Add(txt);
-			}
+				listBox1.Items.Add(it);
 		}
 		
 		private void DumpBtnClick(object sender, EventArgs e)

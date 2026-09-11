@@ -42,6 +42,11 @@ namespace MemConqueror.Lib
 			public MemInfo Info { get; private set; }
 			
 			public byte[] Buffer { get { return _p.Read(Info); } }
+			
+			public override string ToString()
+			{
+				return string.Format("{0:X8}", Info.BaseAddress.ToInt32());
+			}
 		}
 	}
 }

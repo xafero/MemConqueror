@@ -199,7 +199,7 @@ namespace MemConqueror
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.Location = new System.Drawing.Point(15, 83);
 			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(737, 329);
+			this.listBox1.Size = new System.Drawing.Size(83, 329);
 			this.listBox1.TabIndex = 0;
 			// 
 			// timer1
