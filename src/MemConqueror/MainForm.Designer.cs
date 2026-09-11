@@ -45,7 +45,6 @@ namespace MemConqueror
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.panel1 = new MemConqueror.ByteControl();
-			this.button1 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -144,7 +143,6 @@ namespace MemConqueror
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.button1);
 			this.tabPage2.Controls.Add(this.panel1);
 			this.tabPage2.Controls.Add(this.dumpBtn);
 			this.tabPage2.Controls.Add(this.groupBox1);
@@ -307,15 +305,6 @@ namespace MemConqueror
 			this.panel1.Size = new System.Drawing.Size(521, 191);
 			this.panel1.TabIndex = 6;
 			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(229, 143);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 7;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,7 +330,7 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.Button button1;
+
 		private MemConqueror.ByteControl panel1;
 		private System.Windows.Forms.Button dumpBtn;
 		private System.Windows.Forms.GroupBox groupBox1;

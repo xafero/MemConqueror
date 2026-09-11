@@ -195,6 +195,7 @@ namespace MemConqueror
 			if (item is IMemGot)
 			{
 				lastReg = (IMemGot)item;
+				panel1.SetItem(lastReg);
 			}
 		}
 	}
