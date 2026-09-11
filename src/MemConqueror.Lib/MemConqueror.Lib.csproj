@@ -41,9 +41,11 @@
     <Reference Include="System.Management" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FontTool.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="IMemGot.cs" />
     <Compile Include="JsonTool.cs" />
-    <Compile Include="LightReader.cs" />
+    <Compile Include="LazyReader.cs" />
     <Compile Include="MemGot.cs" />
     <Compile Include="MemInfo.cs" />
     <Compile Include="MemReader.cs" />
