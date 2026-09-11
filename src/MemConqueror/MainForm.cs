@@ -168,6 +168,7 @@ namespace MemConqueror
 		
 		private int lastProcId;
 		private MemReader lastMem;
+		private IMemGot lastReg;
 		
 		private void RefreshMemory()
 		{
@@ -186,6 +187,15 @@ namespace MemConqueror
 		private void DumpBtnClick(object sender, EventArgs e)
 		{
 			MemTool.DumpAllMem((uint)lastProcId);
+		}
+		
+		private void ListBox1SelectedIndexChanged(object sender, EventArgs e)
+		{
+			var item = listBox1.SelectedItem;
+			if (item is IMemGot)
+			{
+				lastReg = (IMemGot)item;
+			}
 		}
 	}
 }

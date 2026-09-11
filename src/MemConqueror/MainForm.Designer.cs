@@ -201,6 +201,7 @@ namespace MemConqueror
 			this.listBox1.Name = "listBox1";
 			this.listBox1.Size = new System.Drawing.Size(83, 329);
 			this.listBox1.TabIndex = 0;
+			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1SelectedIndexChanged);
 			// 
 			// timer1
 			// 
