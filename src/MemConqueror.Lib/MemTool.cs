@@ -73,7 +73,7 @@ namespace MemConqueror.Lib
 			Process.Start(fName);
 		}
 		
-		public static IEnumerable<MemGot> ReadAll(uint pid)
+		private static IEnumerable<MemGot> ReadAll(uint pid)
 		{
 			string pName;
 			var hProc = OpenProc(pid, out pName, rw: false);

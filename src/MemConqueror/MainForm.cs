@@ -166,6 +166,7 @@ namespace MemConqueror
 		}
 		
 		private int lastProcId;
+		private MemReader lastMem;
 		
 		private void RefreshMemory()
 		{
@@ -174,8 +175,9 @@ namespace MemConqueror
 			var procName = (string)item["Name"];
 			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
 			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
+			lastMem = new MemReader((uint)procId);
 			
-			foreach (var it in MemTool.ReadAll((uint)procId))
+			foreach (var it in lastMem.ReadAll())
 			{
 				var txt = MemTool.ToStr(it);
 				this.listBox1.Items.Add(txt);
