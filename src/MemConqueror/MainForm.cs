@@ -175,7 +175,7 @@ namespace MemConqueror
 			var procName = (string)item["Name"];
 			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
 			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
-			lastMem = new MemReader((uint)procId);
+			lastMem = new LightReader((uint)procId);
 			
 			foreach (var it in lastMem.ReadAll())
 			{

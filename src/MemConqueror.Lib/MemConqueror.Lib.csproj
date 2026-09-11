@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Helper.cs" />
     <Compile Include="JsonTool.cs" />
+    <Compile Include="LightReader.cs" />
     <Compile Include="MemGot.cs" />
     <Compile Include="MemInfo.cs" />
     <Compile Include="MemReader.cs" />
