@@ -10,7 +10,7 @@ namespace MemConqueror.Lib
 {
 	public static class MemTool
 	{
-		public static string ToStr(this MemGot mg)
+		public static string ToStr(this IMemGot mg)
 		{
 			StringBuilder bld = new StringBuilder();
 			bld.Append("[MG]");
