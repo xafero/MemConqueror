@@ -11,9 +11,19 @@ namespace MemConqueror.Lib
 		{			
 		}
 		
-		protected override byte[] Read(MEMORY_BASIC_INFORMATION mbi)
+		protected override bool IsUsable(MemInfo mbi)
 		{
-			return new byte[0];
+			return base.IsUsable(mbi);
+		}
+		
+		protected override byte[] Read(MemInfo mbi)
+		{
+			return base.Read(mbi);
+		}
+		
+		protected override IMemGot Get(MEMORY_BASIC_INFORMATION mbi)
+		{
+			return base.Get(mbi);
 		}
 	}
 }
