@@ -15,7 +15,9 @@ namespace MemConqueror.Lib
 			StringBuilder bld = new StringBuilder();
 			bld.Append("[MG]");
 			bld.AppendFormat(" Name={0}", mg.Name);
-			bld.AppendFormat(" Size={0:X8}", mg.Buffer.Length);
+			var buff = mg.Buffer;
+			var size = buff == null ? 0 : buff.Length;
+			bld.AppendFormat(" Size={0:X8}", size);
 			bld.AppendFormat(" {0} ", mg.Info.ToStr());
 			return bld.ToString();
 		}

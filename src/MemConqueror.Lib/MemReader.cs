@@ -17,7 +17,7 @@ namespace MemConqueror.Lib
 		private const uint PAGE_GUARD = 0x100;
 
 		private uint _pid;
-		private string _pName;
+		protected string _pName;
 		private IntPtr _handle;
 
 		public MemReader(uint pid, bool rw = false)
