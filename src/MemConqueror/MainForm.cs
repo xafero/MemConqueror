@@ -20,7 +20,8 @@ namespace MemConqueror
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			Icon = ResTool.GetIcon("app.ico");
-			timer1.Enabled = true;
+			listBox1.Font = listBox1.Font.SetMonospace(9);
+			timer1.Enabled = true;			
 		}
 
 		private void timer1_Tick(object sender, EventArgs e)
