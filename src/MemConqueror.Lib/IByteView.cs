@@ -17,9 +17,11 @@ namespace MemConqueror.Lib
 	
 	public static class ByteTool
 	{
+		public const int DefaultHexWidth = 16;
+			
 		public static IEnumerable<ByteLine> ToHex(byte[] bytes, int lineNo, int count)
 		{
-			var width = 16;
+			var width = DefaultHexWidth;
 			var addr = width * lineNo;
 			for (var i = 0; i < count; i++)
 			{
