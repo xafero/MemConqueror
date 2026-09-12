@@ -37,7 +37,8 @@ namespace MemConqueror.Lib
 			for (int i = 0; i < width; i++)
 			{
 				var bit = bytes[offset + i];
-				txt += string.Format("{0:X2}", bit);
+				var sp = i % 2 == 0 ? " ": "";
+				txt += string.Format("{0}{1:X2}", sp, bit);
 			}
 			return txt;
 		}
