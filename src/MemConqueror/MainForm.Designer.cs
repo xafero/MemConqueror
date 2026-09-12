@@ -27,6 +27,7 @@ namespace MemConqueror
 			this.PrivMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PathCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
 			this.panel1 = new MemConqueror.ByteControl();
 			this.dumpBtn = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -143,6 +144,7 @@ namespace MemConqueror
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.vScrollBar1);
 			this.tabPage2.Controls.Add(this.panel1);
 			this.tabPage2.Controls.Add(this.dumpBtn);
 			this.tabPage2.Controls.Add(this.groupBox1);
@@ -154,6 +156,15 @@ namespace MemConqueror
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Memory";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// vScrollBar1
+			// 
+			this.vScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
+			this.vScrollBar1.Location = new System.Drawing.Point(716, 83);
+			this.vScrollBar1.Name = "vScrollBar1";
+			this.vScrollBar1.Size = new System.Drawing.Size(16, 329);
+			this.vScrollBar1.TabIndex = 7;
 			// 
 			// panel1
 			// 
@@ -333,6 +344,7 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.VScrollBar vScrollBar1;
 
 		private MemConqueror.ByteControl panel1;
 		private System.Windows.Forms.Button dumpBtn;
