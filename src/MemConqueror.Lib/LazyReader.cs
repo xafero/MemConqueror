@@ -28,20 +28,20 @@ namespace MemConqueror.Lib
 	
 		private sealed class LazyGot : IMemGot
 		{
-			private readonly LazyReader _p;
+			private readonly Lazy<byte[]> _buff;
 			
 			public LazyGot(string name, MEMORY_BASIC_INFORMATION info, LazyReader p)
 			{
 				Name = name;
 				Info = info;
-				_p = p;
+				_buff = new Lazy<byte[]>(() => p.Read(Info));
 			}
 			
 			public string Name { get; private set; }
 			
 			public MemInfo Info { get; private set; }
 			
-			public byte[] Buffer { get { return _p.Read(Info); } }
+			public byte[] Buffer { get { return _buff.Value; } }
 			
 			public override string ToString()
 			{

@@ -201,14 +201,15 @@ namespace MemConqueror
 			panel1.Refresh();
 		}
 		
-		public IEnumerable<ByteLine> GetLines(IMemGot item, long pos, int count)
+		public IEnumerable<ByteLine> GetLines(IMemGot item, int pos, int count)
 		{
 			if (item == null)
 				yield break;
 			var buff = item.Buffer;
 			if (buff == null)
 				yield break;
-			yield return new ByteLine { Addr = "0", Raw = "128383883", Txt = "Hello" };
+			foreach (var it in ByteTool.ToHex(buff, pos, count))
+				yield return it;
 		}
 	}
 }

@@ -28,7 +28,7 @@ namespace MemConqueror
 		private IByteView _parent;
 
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		public long Pos { get; internal set; }
+		public int Pos { get; internal set; }
 		
 		protected override void OnPaint(PaintEventArgs e)
 		{
