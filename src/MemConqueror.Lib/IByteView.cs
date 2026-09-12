@@ -24,11 +24,34 @@ namespace MemConqueror.Lib
 			for (var i = 0; i < count; i++)
 			{
 				var addrT = string.Format("{0:X8}", addr);
-				var rawT = "";
-				var txt = "";
+				var rawT = ToHexStr(bytes, addr, width);
+				var txt = ToTxtStr(bytes, addr, width);
 				yield return new ByteLine { Addr = addrT, Raw = rawT, Txt = txt };
 				addr += width;
 			}
+		}
+		
+		public static string ToHexStr(byte[] bytes, int offset, int width)
+		{
+			var txt = string.Empty;
+			for (int i = 0; i < width; i++)
+			{
+				var bit = bytes[offset + i];
+				txt += string.Format("{0:X2}", bit);
+			}
+			return txt;
+		}
+		
+		public static string ToTxtStr(byte[] bytes, int offset, int width)
+		{
+			var txt = string.Empty;
+			for (int i = 0; i < width; i++) 
+			{
+				var bit = bytes[offset + i];
+				var put = bit >= 32 && bit < 127 ? (char)bit : '.';
+				txt += string.Format("{0}", put);
+			}
+			return txt;
 		}
 	}
 }
