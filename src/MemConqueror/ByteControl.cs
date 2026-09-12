@@ -43,7 +43,8 @@ namespace MemConqueror
 				var margin = 10;
 				var y = 0;
 				if (Pos < 0) Pos = 0;
-				foreach (var line in _parent.GetLines(_item, Pos, 24))
+				var count = Bounds.Height / size;
+				foreach (var line in _parent.GetLines(_item, Pos, count))
 				{
 					var d = string.Format("{0}  {1}   {2}",
 						line.Addr, line.Raw, line.Txt);

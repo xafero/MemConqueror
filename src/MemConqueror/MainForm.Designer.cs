@@ -157,13 +157,12 @@ namespace MemConqueror
 			// 
 			// panel1
 			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.panel1.BackColor = System.Drawing.Color.White;
 			this.panel1.Location = new System.Drawing.Point(117, 83);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(635, 329);
+			this.panel1.Size = new System.Drawing.Size(596, 329);
 			this.panel1.TabIndex = 6;
 			// 
 			// dumpBtn
