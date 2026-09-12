@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="FontTool.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="IByteView.cs" />
     <Compile Include="IMemGot.cs" />
     <Compile Include="JsonTool.cs" />
     <Compile Include="LazyReader.cs" />

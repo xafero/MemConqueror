@@ -10,7 +10,7 @@ using MemConqueror.Lib;
 
 namespace MemConqueror
 {
-	public partial class MainForm : Form
+	public partial class MainForm : Form, IByteView
 	{
 		public MainForm()
 		{
@@ -21,6 +21,7 @@ namespace MemConqueror
 		{
 			Icon = ResTool.GetIcon("app.ico");
 			listBox1.Font = listBox1.Font.SetMonospace(9);
+			panel1.SetItem(this, null);
 			timer1.Enabled = true;			
 		}
 
@@ -195,7 +196,7 @@ namespace MemConqueror
 			if (item is IMemGot)
 			{
 				lastReg = (IMemGot)item;
-				panel1.SetItem(lastReg);
+				panel1.SetItem(this, lastReg);
 			}
 		}
 	}
