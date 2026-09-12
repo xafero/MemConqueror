@@ -205,11 +205,10 @@ namespace MemConqueror
 		{
 			if (item == null)
 				yield break;
-			
-			
-			
-			
-			throw new NotImplementedException();
+			var buff = item.Buffer;
+			if (buff == null)
+				yield break;
+			yield return new ByteLine { Addr = "0", Raw = "128383883", Txt = "Hello" };
 		}
 	}
 }

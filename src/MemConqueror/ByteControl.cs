@@ -14,6 +14,7 @@ namespace MemConqueror
 		{
 			InitializeComponent();
 			DoubleBuffered = true;
+			BackColor = Color.FromKnownColor(KnownColor.White);
 		}
 		
 		private IMemGot _item;

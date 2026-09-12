@@ -27,6 +27,7 @@ namespace MemConqueror
 			this.PrivMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PathCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.panel1 = new MemConqueror.ByteControl();
 			this.dumpBtn = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.idLbl = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.panel1 = new MemConqueror.ByteControl();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -154,6 +154,17 @@ namespace MemConqueror
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Memory";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// panel1
+			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.BackColor = System.Drawing.Color.White;
+			this.panel1.Location = new System.Drawing.Point(117, 83);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(635, 329);
+			this.panel1.TabIndex = 6;
 			// 
 			// dumpBtn
 			// 
@@ -297,13 +308,6 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
-			// 
-			// panel1
-			// 
-			this.panel1.Location = new System.Drawing.Point(204, 194);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(521, 191);
-			this.panel1.TabIndex = 6;
 			// 
 			// MainForm
 			// 
