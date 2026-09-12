@@ -34,7 +34,15 @@ namespace MemConqueror
 			base.OnPaint(e);
 			if (_parent == null)
 				return;
-			
+			using (var font = Font.SetMonospace(10))
+			using (var brush = new SolidBrush(Color.Black))
+			{
+				var g = e.Graphics;
+				var size = 20;
+				var margin = 10;
+				var y = 0;
+				if (Pos < 0) Pos = 0;
+			}
 		}
 	}
 }
