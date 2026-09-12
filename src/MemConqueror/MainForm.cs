@@ -197,8 +197,18 @@ namespace MemConqueror
 			{
 				lastReg = (IMemGot)item;
 				panel1.SetItem(this, lastReg);
+				vScrollBar1.Value = 0;
+				vScrollBar1.Minimum = 0;
+				vScrollBar1.Maximum = GetLineCount(lastReg);
 			}
 			panel1.Refresh();
+		}
+		
+		private int GetLineCount(IMemGot mg)
+		{
+			var buff = mg == null ? null : mg.Buffer;
+			var size = buff == null ? 0 : buff.Length / ByteTool.DefaultHexWidth;
+			return size;
 		}
 		
 		public IEnumerable<ByteLine> GetLines(IMemGot item, int pos, int count)
@@ -210,6 +220,13 @@ namespace MemConqueror
 				yield break;
 			foreach (var it in ByteTool.ToHex(buff, pos, count))
 				yield return it;
+		}
+		
+		private void VScrollBar1ValueChanged(object sender, EventArgs e)
+		{
+			var line = this.vScrollBar1.Value;
+			panel1.Pos = line;
+			panel1.Refresh();
 		}
 	}
 }

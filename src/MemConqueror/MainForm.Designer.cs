@@ -165,6 +165,7 @@ namespace MemConqueror
 			this.vScrollBar1.Name = "vScrollBar1";
 			this.vScrollBar1.Size = new System.Drawing.Size(16, 329);
 			this.vScrollBar1.TabIndex = 7;
+			this.vScrollBar1.ValueChanged += new System.EventHandler(this.VScrollBar1ValueChanged);
 			// 
 			// panel1
 			// 

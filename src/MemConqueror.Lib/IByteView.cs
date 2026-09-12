@@ -27,6 +27,8 @@ namespace MemConqueror.Lib
 			{
 				var addrT = string.Format("{0:X8}", addr);
 				var rawT = ToHexStr(bytes, addr, width);
+				if (string.IsNullOrWhiteSpace(rawT))
+					yield break;
 				var txt = ToTxtStr(bytes, addr, width);
 				yield return new ByteLine { Addr = addrT, Raw = rawT, Txt = txt };
 				addr += width;
@@ -38,7 +40,10 @@ namespace MemConqueror.Lib
 			var txt = string.Empty;
 			for (int i = 0; i < width; i++)
 			{
-				var bit = bytes[offset + i];
+				var idx = offset + i;
+				if (idx >= bytes.Length)
+					continue;
+				var bit = bytes[idx];
 				var sp = i % 2 == 0 ? " ": "";
 				txt += string.Format("{0}{1:X2}", sp, bit);
 			}
@@ -50,7 +55,10 @@ namespace MemConqueror.Lib
 			var txt = string.Empty;
 			for (int i = 0; i < width; i++) 
 			{
-				var bit = bytes[offset + i];
+				var idx = offset + i;
+				if (idx >= bytes.Length)
+					continue;
+				var bit = bytes[idx];
 				var put = bit >= 32 && bit < 127 ? (char)bit : '.';
 				txt += string.Format("{0}", put);
 			}
