@@ -70,6 +70,7 @@ namespace MemConqueror.Lib
 
 		public IEnumerable<IMemGot> ReadAll()
 		{
+			var is32Bit = IntPtr.Size == 4;
 			Type mbiType = typeof(MEMORY_BASIC_INFORMATION);
 			int mbiSize = Marshal.SizeOf(mbiType);
 			IntPtr mbiPtr = Marshal.AllocHGlobal(mbiSize);
@@ -85,9 +86,12 @@ namespace MemConqueror.Lib
 						if (it != null) yield return it;
 					}
 					long next = mbi.BaseAddress.ToInt64() + (long)mbi.RegionSize;
-					if (next <= address.ToInt64())
+					var go = is32Bit ? 
+								 (uint)next > (uint)address.ToInt64() : 
+								(ulong)next > (ulong)address.ToInt64();
+					if (!go)
 						break;
-					address = new IntPtr(next);
+					address = is32Bit ? new IntPtr((int)next) : new IntPtr(next);
 				}
 			}
 			finally
