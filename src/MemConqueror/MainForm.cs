@@ -198,6 +198,18 @@ namespace MemConqueror
 				lastReg = (IMemGot)item;
 				panel1.SetItem(this, lastReg);
 			}
+			panel1.Refresh();
+		}
+		
+		public IEnumerable<ByteLine> GetLines(IMemGot item, long pos, int count)
+		{
+			if (item == null)
+				yield break;
+			
+			
+			
+			
+			throw new NotImplementedException();
 		}
 	}
 }

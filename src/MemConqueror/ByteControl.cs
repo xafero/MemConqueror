@@ -42,6 +42,15 @@ namespace MemConqueror
 				var margin = 10;
 				var y = 0;
 				if (Pos < 0) Pos = 0;
+				foreach (var line in _parent.GetLines(_item, Pos, 24))
+				{
+					var d = string.Format("{0}  {1}   {2}",
+						line.Addr, line.Raw, line.Txt);
+					var xPos = margin;
+					var yPos = margin + y * size;
+					g.DrawString(d, font, brush, xPos, yPos);
+					y++;
+				}
 			}
 		}
 	}
