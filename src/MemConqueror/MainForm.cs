@@ -150,7 +150,14 @@ namespace MemConqueror
 		{
 			ClearProcesses();			
 		}
-		
+
+		private void dumpMemoryToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			var item = GetSelectedItem();
+			var procId = (int)item["Id"];
+			MemTool.DumpAllMem((uint)procId);
+		}
+
 		private void GoIntoMemoryToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			SwitchToMemory();
@@ -199,11 +206,6 @@ namespace MemConqueror
 			var caption = ex.GetType().Name;
 			var text = ex.Message;
 			MessageBox.Show(this, text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-		}
-
-		private void DumpBtnClick(object sender, EventArgs e)
-		{
-			MemTool.DumpAllMem((uint)lastProcId);
 		}
 		
 		private void ListBox1SelectedIndexChanged(object sender, EventArgs e)

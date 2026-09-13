@@ -29,7 +29,6 @@ namespace MemConqueror
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
 			this.panel1 = new MemConqueror.ByteControl();
-			this.dumpBtn = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.idLbl = new System.Windows.Forms.Label();
 			this.nameLbl = new System.Windows.Forms.Label();
@@ -38,6 +37,7 @@ namespace MemConqueror
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openItsFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dumpMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.goIntoMemoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -46,6 +46,9 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.FuckColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -54,15 +57,18 @@ namespace MemConqueror
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
 			// 
 			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Location = new System.Drawing.Point(12, 30);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -86,17 +92,17 @@ namespace MemConqueror
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.AllowUserToResizeRows = false;
 			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-									this.IdCol,
-									this.NameCol,
-									this.VirtMemCol,
-									this.WorkMemCol,
-									this.PrivMemCol,
-									this.PathCol});
+            this.IdCol,
+            this.NameCol,
+            this.VirtMemCol,
+            this.WorkMemCol,
+            this.PrivMemCol,
+            this.PathCol});
 			this.dataGridView1.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersVisible = false;
@@ -146,7 +152,6 @@ namespace MemConqueror
 			// 
 			this.tabPage2.Controls.Add(this.vScrollBar1);
 			this.tabPage2.Controls.Add(this.panel1);
-			this.tabPage2.Controls.Add(this.dumpBtn);
 			this.tabPage2.Controls.Add(this.groupBox1);
 			this.tabPage2.Controls.Add(this.listBox1);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -160,7 +165,7 @@ namespace MemConqueror
 			// vScrollBar1
 			// 
 			this.vScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.vScrollBar1.Location = new System.Drawing.Point(716, 83);
 			this.vScrollBar1.Name = "vScrollBar1";
 			this.vScrollBar1.Size = new System.Drawing.Size(16, 329);
@@ -170,22 +175,12 @@ namespace MemConqueror
 			// panel1
 			// 
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.panel1.BackColor = System.Drawing.Color.White;
 			this.panel1.Location = new System.Drawing.Point(117, 83);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(596, 329);
-			this.panel1.TabIndex = 6;
-			// 
-			// dumpBtn
-			// 
-			this.dumpBtn.Location = new System.Drawing.Point(394, 38);
-			this.dumpBtn.Name = "dumpBtn";
-			this.dumpBtn.Size = new System.Drawing.Size(80, 23);
-			this.dumpBtn.TabIndex = 4;
-			this.dumpBtn.Text = "Dump to file";
-			this.dumpBtn.UseVisualStyleBackColor = true;
-			this.dumpBtn.Click += new System.EventHandler(this.DumpBtnClick);
+			this.panel1.TabIndex = 6;			
 			// 
 			// groupBox1
 			// 
@@ -218,7 +213,7 @@ namespace MemConqueror
 			// listBox1
 			// 
 			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.Location = new System.Drawing.Point(15, 83);
 			this.listBox1.Name = "listBox1";
@@ -234,37 +229,45 @@ namespace MemConqueror
 			// contextMenuStrip1
 			// 
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.killMenuItem,
-									this.openItsFolderToolStripMenuItem,
-									this.goIntoMemoryToolStripMenuItem});
+            this.killMenuItem,
+            this.openItsFolderToolStripMenuItem,
+			this.dumpMemoryToolStripMenuItem,
+            this.goIntoMemoryToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(161, 92);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(162, 70);
 			// 
 			// killMenuItem
 			// 
 			this.killMenuItem.Name = "killMenuItem";
-			this.killMenuItem.Size = new System.Drawing.Size(160, 22);
+			this.killMenuItem.Size = new System.Drawing.Size(161, 22);
 			this.killMenuItem.Text = "Kill this process";
 			this.killMenuItem.Click += new System.EventHandler(this.killMenuItem_Click);
 			// 
 			// openItsFolderToolStripMenuItem
 			// 
 			this.openItsFolderToolStripMenuItem.Name = "openItsFolderToolStripMenuItem";
-			this.openItsFolderToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+			this.openItsFolderToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
 			this.openItsFolderToolStripMenuItem.Text = "Open its folder";
 			this.openItsFolderToolStripMenuItem.Click += new System.EventHandler(this.openItsFolderToolStripMenuItem_Click);
 			// 
 			// goIntoMemoryToolStripMenuItem
 			// 
 			this.goIntoMemoryToolStripMenuItem.Name = "goIntoMemoryToolStripMenuItem";
-			this.goIntoMemoryToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+			this.goIntoMemoryToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
 			this.goIntoMemoryToolStripMenuItem.Text = "Go into memory";
-			this.goIntoMemoryToolStripMenuItem.Click += new System.EventHandler(this.GoIntoMemoryToolStripMenuItemClick);
+			this.goIntoMemoryToolStripMenuItem.Click += new System.EventHandler(this.GoIntoMemoryToolStripMenuItemClick);					
+			// 
+// dumpMemoryToolStripMenuItem
+// 
+this.dumpMemoryToolStripMenuItem.Name = "dumpMemoryToolStripMenuItem";
+this.dumpMemoryToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+this.dumpMemoryToolStripMenuItem.Text = "Dump to file";
+this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemoryToolStripMenuItemClick);
 			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 477);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(800, 22);
@@ -274,14 +277,14 @@ namespace MemConqueror
 			// toolStripStatusLabel1
 			// 
 			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			this.toolStripStatusLabel1.Size = new System.Drawing.Size(19, 17);
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(16, 17);
 			this.toolStripStatusLabel1.Text = "...";
 			// 
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.fileToolStripMenuItem,
-									this.viewToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -291,34 +294,69 @@ namespace MemConqueror
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.quitToolStripMenuItem});
+            this.quitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
 			// 
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
 			this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F10)));
-			this.quitToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+			this.quitToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.quitToolStripMenuItem.Text = "Quit";
 			this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItemClick);
 			// 
 			// viewToolStripMenuItem
 			// 
 			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.refreshToolStripMenuItem});
+            this.refreshToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-			this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.viewToolStripMenuItem.Text = "View";
 			// 
 			// refreshToolStripMenuItem
 			// 
 			this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
 			this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
+			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.dataGridView2);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(768, 419);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "Memory";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.AllowUserToAddRows = false;
+			this.dataGridView2.AllowUserToDeleteRows = false;
+			this.dataGridView2.AllowUserToResizeRows = false;
+			this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FuckColumn});
+			this.dataGridView2.Location = new System.Drawing.Point(6, 6);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.RowHeadersVisible = false;
+			this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dataGridView2.Size = new System.Drawing.Size(756, 407);
+			this.dataGridView2.TabIndex = 0;
+			// 
+			// FuckColumn
+			// 
+			this.FuckColumn.HeaderText = "Fuck";
+			this.FuckColumn.Name = "FuckColumn";
 			// 
 			// MainForm
 			// 
@@ -342,18 +380,22 @@ namespace MemConqueror
 			this.statusStrip1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			this.tabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
+
 		private System.Windows.Forms.VScrollBar vScrollBar1;
 
 		private MemConqueror.ByteControl panel1;
-		private System.Windows.Forms.Button dumpBtn;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label idLbl;
 		private System.Windows.Forms.Label nameLbl;
 		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.ToolStripMenuItem goIntoMemoryToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem dumpMemoryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
@@ -376,5 +418,8 @@ namespace MemConqueror
 		private System.Windows.Forms.DataGridViewTextBoxColumn PrivMemCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn PathCol;
 		private System.Windows.Forms.ToolStripMenuItem openItsFolderToolStripMenuItem;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FuckColumn;
 	}
 }
