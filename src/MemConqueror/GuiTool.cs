@@ -15,5 +15,11 @@ namespace MemConqueror
 		{
 			return dv.Rows.Cast<DataGridViewRow>();
 		}
+
+		public static void ClearProcesses(this DataGridView dv)
+		{
+			dv.ClearSelection();
+			dv.Rows.Clear();
+		}
 	}
 }

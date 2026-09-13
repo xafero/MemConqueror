@@ -36,12 +36,6 @@ namespace MemConqueror
 		{
 		}
 
-		private void ClearProcesses()
-		{
-			dataGridView1.ClearSelection();
-			dataGridView1.Rows.Clear();
-		}
-
 		private void RefreshProcesses()
 		{
 			var procs = Process.GetProcesses();
@@ -144,7 +138,7 @@ namespace MemConqueror
 		
 		private void RefreshToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			ClearProcesses();			
+			dataGridView1.ClearProcesses();
 		}
 
 		private void dumpMemoryToolStripMenuItemClick(object sender, EventArgs e)
