@@ -163,7 +163,6 @@ namespace MemConqueror
 		
 		private void SwitchToMemory()
 		{
-			tabControl1.SelectedIndex = 1;
 			RefreshMemory();
 		}
 		
@@ -184,6 +183,7 @@ namespace MemConqueror
 				ShowError(ex);
 				return;
 			}
+			tabControl1.SelectedIndex = 1;
 			lastProcId = procId;
 			var procName = (string)item["Name"];
 			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
