@@ -378,27 +378,27 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			// 
 			// MrAlBseCol
 			// 
-			this.MrAlBseCol.HeaderText = "AlBse";
+			this.MrAlBseCol.HeaderText = "Base";
 			this.MrAlBseCol.Name = "MrAlBseCol";			
 			// 
 			// MrAlProCol
 			// 
-			this.MrAlProCol.HeaderText = "AlPro";
+			this.MrAlProCol.HeaderText = "Allocated";
 			this.MrAlProCol.Name = "MrAlProCol";
 			// 
 			// MrStatCol
 			// 
-			this.MrStatCol.HeaderText = "Stat";
+			this.MrStatCol.HeaderText = "State";
 			this.MrStatCol.Name = "MrStatCol";
 			// 
 			// MrProtCol
 			// 
-			this.MrProtCol.HeaderText = "Prot";
+			this.MrProtCol.HeaderText = "Protect";
 			this.MrProtCol.Name = "MrProtCol";
 			// 
 			// MrTypCol
 			// 
-			this.MrTypCol.HeaderText = "Typ";
+			this.MrTypCol.HeaderText = "Type";
 			this.MrTypCol.Name = "MrTypCol";			
 			// 
 			// MainForm
