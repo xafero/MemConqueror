@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Management;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using PROCESS_MEMORY_COUNTERS = MemConqueror.ProcMemInfo;
 
 // ReSharper disable UseObjectOrCollectionInitializer
 
@@ -19,9 +20,9 @@ namespace MemConqueror
                 handle = Win32.OpenProcess(acc, false, (uint)proc.Id);
                 if (handle == IntPtr.Zero)
                     return null;
-                var counters = new Win32.PROCESS_MEMORY_COUNTERS
+                var counters = new PROCESS_MEMORY_COUNTERS
                 {
-                    cb = Marshal.SizeOf(typeof(Win32.PROCESS_MEMORY_COUNTERS))
+                    cb = Marshal.SizeOf(typeof(PROCESS_MEMORY_COUNTERS))
                 };
                 if (!Win32.GetProcessMemoryInfo(handle, out counters, counters.cb))
                     return null;
