@@ -170,7 +170,10 @@ namespace MemConqueror
 		
 		private void RefreshToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			dataGridView1.ClearProcesses();
+			if (tabControl1.SelectedIndex == 0)
+				dataGridView1.ClearRows();
+			else if (tabControl1.SelectedIndex == 1)
+				dataGridView2.ClearRows();
 		}
 
 		private void dumpMemoryToolStripMenuItemClick(object sender, EventArgs e)
