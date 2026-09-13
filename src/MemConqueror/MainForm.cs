@@ -174,17 +174,33 @@ namespace MemConqueror
 		private void RefreshMemory()
 		{
 			var item = GetSelectedItem();
-			var procId = lastProcId = (int)item["Id"];
+			var procId = (int)item["Id"];
+			try
+			{
+				lastMem = new LazyReader((uint)procId);
+			}
+			catch (Exception ex)
+			{
+				ShowError(ex);
+				return;
+			}
+			lastProcId = procId;
 			var procName = (string)item["Name"];
 			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
 			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
-			lastMem = new LazyReader((uint)procId);
 			
 			listBox1.Items.Clear();
 			foreach (var it in lastMem.ReadAll())
 				listBox1.Items.Add(it);
 		}
-		
+
+		private void ShowError(Exception ex)
+		{
+			var caption = ex.GetType().Name;
+			var text = ex.Message;
+			MessageBox.Show(this, text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+		}
+
 		private void DumpBtnClick(object sender, EventArgs e)
 		{
 			MemTool.DumpAllMem((uint)lastProcId);
