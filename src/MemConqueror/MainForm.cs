@@ -48,9 +48,13 @@ namespace MemConqueror
 					continue;
 				}
 				var name = reg.Name;
-				var debu = reg.ToStr();
 				var priv = TxtTool.ToByteSize(reg.Info.RegionSize.ToUInt64());
-				object[] args = { name, rid, priv, debu };
+				var alb = reg.Info.AllocationBase;
+				var alp = reg.Info.AllocationProtect;
+				var sta = reg.Info.State;
+				var pro = reg.Info.Protect;
+				var typ = reg.Info.Type;				
+				object[] args = { name, rid, priv, alb, alp, sta, pro, typ };
 				dataGridView2.Rows.Add(args);
 				isDirty = true;
 			}
