@@ -48,10 +48,14 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.MrAddrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MrSizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MrTxtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrAddrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrSizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();			
+			this.MrAlBseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrAlProCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrStatCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();	
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -348,7 +352,8 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MrNameCol,this.MrAddrCol,this.MrSizeCol,this.MrTxtCol});
+				this.MrNameCol,this.MrAddrCol,this.MrSizeCol,
+				this.MrAlBseCol,this.MrAlProCol,this.MrStatCol,this.MrProtCol,this.MrTypCol });
 			this.dataGridView2.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.RowHeadersVisible = false;
@@ -371,10 +376,30 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.MrSizeCol.HeaderText = "Size";
 			this.MrSizeCol.Name = "MrSizeCol";
 			// 
-			// MrTxtCol
+			// MrAlBseCol
 			// 
-			this.MrTxtCol.HeaderText = "Txt";
-			this.MrTxtCol.Name = "MrTxtCol";					
+			this.MrAlBseCol.HeaderText = "AlBse";
+			this.MrAlBseCol.Name = "MrAlBseCol";			
+			// 
+			// MrAlProCol
+			// 
+			this.MrAlProCol.HeaderText = "AlPro";
+			this.MrAlProCol.Name = "MrAlProCol";
+			// 
+			// MrStatCol
+			// 
+			this.MrStatCol.HeaderText = "Stat";
+			this.MrStatCol.Name = "MrStatCol";
+			// 
+			// MrProtCol
+			// 
+			this.MrProtCol.HeaderText = "Prot";
+			this.MrProtCol.Name = "MrProtCol";
+			// 
+			// MrTypCol
+			// 
+			this.MrTypCol.HeaderText = "Typ";
+			this.MrTypCol.Name = "MrTypCol";			
 			// 
 			// MainForm
 			// 
@@ -439,6 +464,10 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrAddrCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrNameCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrSizeCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MrTxtCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrAlBseCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrAlProCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrStatCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrProtCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrTypCol;
 	}
 }
