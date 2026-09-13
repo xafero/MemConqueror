@@ -34,14 +34,46 @@ namespace MemConqueror
 
 		private void RefreshMemories()
 		{
+			var procs = Process.GetProcesses();
+			var oldIds = dataGridView2.GetIds(0);
+			var isDirty = false;
+			foreach (var proc in procs)
+			{
+				var pid = proc.Id;
+				if (oldIds.Count >= 1 && oldIds.Contains(pid))
+				{
+					oldIds.Remove(pid);
+					continue;
+				}
+				var name = proc.ProcessName;
+				var virt = TxtTool.ToByteSize(proc.VirtualMemorySize64);
+				var work = TxtTool.ToByteSize(proc.WorkingSet64);
+				var priv = TxtTool.ToByteSize(proc.PrivateMemorySize64);
+				var path = ProcTool.GetModuleFile(proc);
+				object[] args = { pid, name, virt, work, priv, path };
+				dataGridView2.Rows.Add(args);
+				isDirty = true;
+			}
+			if (oldIds.Count >= 1)
+				foreach (var row in dataGridView2.GetRows().ToArray())
+				{
+					var pid = (int)row.Cells[0].Value;
+					if (!oldIds.Contains(pid))
+						continue;
+					dataGridView2.Rows.Remove(row);
+					isDirty = true;
+				}
+			if (isDirty)
+			{
+				dataGridView2.Sort(FuckColumn, ListSortDirection.Ascending);
+			}
+			toolStripStatusLabel1.Text = "Memory regions: " + dataGridView2.RowCount;
 		}
 
 		private void RefreshProcesses()
 		{
 			var procs = Process.GetProcesses();
-			var oldIds = new List<int>(
-				dataGridView1.GetRows().Select(r => (int)r.Cells[0].Value)
-			);
+			var oldIds = dataGridView1.GetIds(0);
 			var isDirty = false;
 			foreach (var proc in procs)
 			{
@@ -72,8 +104,8 @@ namespace MemConqueror
 			if (isDirty)
 			{
 				dataGridView1.Sort(NameCol, ListSortDirection.Ascending);
-				toolStripStatusLabel1.Text = "Processes: " + dataGridView1.RowCount;
 			}
+			toolStripStatusLabel1.Text = "Processes: " + dataGridView1.RowCount;
 		}
 
 		private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
