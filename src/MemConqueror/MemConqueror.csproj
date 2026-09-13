@@ -42,6 +42,7 @@
     <Compile Include="ByteControl.Designer.cs">
       <DependentUpon>ByteControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuiTool.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

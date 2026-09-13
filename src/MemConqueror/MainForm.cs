@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-
 using MemConqueror.Lib;
 
 namespace MemConqueror
@@ -22,24 +21,21 @@ namespace MemConqueror
 			Icon = ResTool.GetIcon("app.ico");
 			listBox1.Font = listBox1.Font.SetMonospace(9);
 			panel1.SetItem(this, null);
-			timer1.Enabled = true;			
+			timer1.Enabled = true;
 		}
 
 		private void timer1_Tick(object sender, EventArgs e)
 		{
-			RefreshProcesses();
+			if (tabControl1.SelectedIndex == 0)
+				RefreshProcesses();
+			else if (tabControl1.SelectedIndex == 1)
+				RefreshMemories();
 		}
 
-		private IEnumerable<DataGridViewRow> GetSelectedRows()
+		private void RefreshMemories()
 		{
-			return dataGridView1.SelectedRows.Cast<DataGridViewRow>();
 		}
 
-		private IEnumerable<DataGridViewRow> GetRows()
-		{
-			return dataGridView1.Rows.Cast<DataGridViewRow>();
-		}
-		
 		private void ClearProcesses()
 		{
 			dataGridView1.ClearSelection();
@@ -50,7 +46,7 @@ namespace MemConqueror
 		{
 			var procs = Process.GetProcesses();
 			var oldIds = new List<int>(
-				GetRows().Select(r => (int)r.Cells[0].Value)
+				dataGridView1.GetRows().Select(r => (int)r.Cells[0].Value)
 			);
 			var isDirty = false;
 			foreach (var proc in procs)
@@ -71,7 +67,7 @@ namespace MemConqueror
 				isDirty = true;
 			}
 			if (oldIds.Count >= 1)
-				foreach (var row in GetRows().ToArray())
+				foreach (var row in dataGridView1.GetRows().ToArray())
 				{
 					var pid = (int)row.Cells[0].Value;
 					if (!oldIds.Contains(pid))
@@ -119,7 +115,7 @@ namespace MemConqueror
 
 		private IDictionary<string, object> GetSelectedItem()
 		{
-			var sel = GetSelectedRows().FirstOrDefault();
+			var sel = dataGridView1.GetSelectedRows().FirstOrDefault();
 			if (sel == null) return null;
 			var itm = GetItem(sel);
 			if (itm == null) return null;
