@@ -18,14 +18,6 @@ namespace MemConqueror
         public const int MEM_MAPPED = 0x40000;
         public const int MEM_PRIVATE = 0x20000;
 
-        private const uint MEM_TYPE_MEM_PRIVATE = 0x20000;
-        private const uint MEM_TYPE_MEM_MAPPED = 0x40000;
-        private const uint MEM_TYPE_MEM_IMAGE = 0x1000000;
-
-        private const uint MEM_STATE_MEM_RESERVE = 0x2000;
-        private const uint MEM_STATE_MEM_FREE = 0x10000;
-        private const uint MEM_STATE_MEM_COMMIT = 0x1000;
-
         public const uint PROCESS_VM_OPERATION = 0x8;
         public const uint PROCESS_VM_WRITE = 0x20;
 
