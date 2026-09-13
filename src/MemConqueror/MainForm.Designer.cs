@@ -48,7 +48,10 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.FuckColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrAddrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrSizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrTxtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -345,18 +348,33 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FuckColumn});
+            this.MrAddrCol,this.MrNameCol,this.MrSizeCol,this.MrTxtCol});
 			this.dataGridView2.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.RowHeadersVisible = false;
 			this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView2.Size = new System.Drawing.Size(756, 407);
-			this.dataGridView2.TabIndex = 0;
+			this.dataGridView2.TabIndex = 0;					
 			// 
-			// FuckColumn
+			// MrAddrColumn
 			// 
-			this.FuckColumn.HeaderText = "Fuck";
-			this.FuckColumn.Name = "FuckColumn";
+			this.MrAddrCol.HeaderText = "Addr";
+			this.MrAddrCol.Name = "MrAddrCol";
+			// 
+			// MrNameColumn
+			// 
+			this.MrNameCol.HeaderText = "Name";
+			this.MrNameCol.Name = "MrNameCol";
+			// 
+			// MrSizeColumn
+			// 
+			this.MrSizeCol.HeaderText = "Size";
+			this.MrSizeCol.Name = "MrSizeCol";
+			// 
+			// MrTxtColumn
+			// 
+			this.MrTxtCol.HeaderText = "Txt";
+			this.MrTxtCol.Name = "MrTxtCol";					
 			// 
 			// MainForm
 			// 
@@ -388,7 +406,6 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 		}
 
 		private System.Windows.Forms.VScrollBar vScrollBar1;
-
 		private MemConqueror.ByteControl panel1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label idLbl;
@@ -401,7 +418,6 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 		private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip menuStrip1;
-
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabPage tabPage2;
@@ -420,6 +436,9 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 		private System.Windows.Forms.ToolStripMenuItem openItsFolderToolStripMenuItem;
 		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn FuckColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrAddrCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrNameCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrSizeCol;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MrTxtCol;
 	}
 }

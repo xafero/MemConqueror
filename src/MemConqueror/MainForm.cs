@@ -34,23 +34,21 @@ namespace MemConqueror
 
 		private void RefreshMemories()
 		{
-			var procs = Process.GetProcesses();
+			var regions = lastMem.ReadAll();
 			var oldIds = dataGridView2.GetIds(0);
 			var isDirty = false;
-			foreach (var proc in procs)
+			foreach (var reg in regions)
 			{
-				var pid = proc.Id;
+				var pid = reg.Info.BaseAddress.ToInt32();
 				if (oldIds.Count >= 1 && oldIds.Contains(pid))
 				{
 					oldIds.Remove(pid);
 					continue;
 				}
-				var name = proc.ProcessName;
-				var virt = TxtTool.ToByteSize(proc.VirtualMemorySize64);
-				var work = TxtTool.ToByteSize(proc.WorkingSet64);
-				var priv = TxtTool.ToByteSize(proc.PrivateMemorySize64);
-				var path = ProcTool.GetModuleFile(proc);
-				object[] args = { pid, name, virt, work, priv, path };
+				var name = reg.Name;
+				var debu = reg.ToStr();
+				var priv = TxtTool.ToByteSize(reg.Info.RegionSize.ToUInt64());
+				object[] args = { pid, name, priv, debu };
 				dataGridView2.Rows.Add(args);
 				isDirty = true;
 			}
@@ -65,7 +63,7 @@ namespace MemConqueror
 				}
 			if (isDirty)
 			{
-				dataGridView2.Sort(FuckColumn, ListSortDirection.Ascending);
+				dataGridView2.Sort(MrAddrCol, ListSortDirection.Ascending);
 			}
 			toolStripStatusLabel1.Text = "Memory regions: " + dataGridView2.RowCount;
 		}
