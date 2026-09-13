@@ -231,7 +231,8 @@ namespace MemConqueror
 			var procName = (string)item["Name"];
 			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
 			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
-			
+
+			dataGridView2.ClearRows();
 			listBox1.Items.Clear();
 			foreach (var it in lastMem.ReadAll())
 				listBox1.Items.Add(it);
