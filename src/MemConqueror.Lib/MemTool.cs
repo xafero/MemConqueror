@@ -63,66 +63,19 @@ namespace MemConqueror.Lib
 			var enc = Encoding.ASCII;
 			using (FileStream outPut = File.Create(fName))
 			{
-				foreach (MemGot item in ReadAll(pid))
+				using (var mem = new MemReader(pid))
 				{
-					byte[] debug = enc.GetBytes(item.Info.ToStr() + "\r\n");
-					outPut.Write(debug, 0, debug.Length);
-					byte[] array = item.Buffer;
-					outPut.Write(array, 0, item.Buffer.Length);
+					foreach (MemGot item in mem.ReadAll())
+					{
+						byte[] debug = enc.GetBytes(item.Info.ToStr() + "\r\n");
+						outPut.Write(debug, 0, debug.Length);
+						byte[] array = item.Buffer;
+						outPut.Write(array, 0, item.Buffer.Length);
+					}
 				}
 				outPut.Flush();
 			}
 			Process.Start(fName);
-		}
-		
-		private static IEnumerable<MemGot> ReadAll(uint pid)
-		{
-			string pName;
-			var hProc = OpenProc(pid, out pName, rw: false);
-			IntPtr address = IntPtr.Zero;
-			Type mbiType = typeof(MEMORY_BASIC_INFORMATION);
-			int mbiSize = Marshal.SizeOf(mbiType);
-			IntPtr mbiPtr = Marshal.AllocHGlobal(mbiSize);
-			try
-			{
-				while ((int)Win32.VirtualQueryEx(hProc, address, mbiPtr, (UIntPtr)mbiSize) != 0)
-				{
-					MEMORY_BASIC_INFORMATION mbi = (MEMORY_BASIC_INFORMATION)Marshal.PtrToStructure(mbiPtr, mbiType);
-					bool isCommitted = mbi.State == 4096;
-					uint protect = mbi.Protect;
-					bool isReadable = (protect & 2) != 0 || (protect & 8) != 0 || (protect & 4) != 0 || (protect & 0x20) != 0 || (protect & 0x80) != 0 || (protect & 0x40) != 0;
-					bool notGuarded = (protect & 0x100) == 0;
-					if (isCommitted & isReadable & notGuarded)
-					{
-						int regSize = (int)mbi.RegionSize;
-						IntPtr regBuffer = Marshal.AllocHGlobal(regSize);
-						try
-						{
-							UIntPtr bytesRead;
-							if (Win32.ReadProcessMemory(hProc, mbi.BaseAddress, regBuffer, (UIntPtr)regSize, out bytesRead) && bytesRead.ToUInt32() != 0)
-							{
-								byte[] manBuffer = new byte[(uint)bytesRead.ToUInt32()];
-								Marshal.Copy(regBuffer, manBuffer, 0, manBuffer.Length);
-								yield return new MemGot(pName, mbi, manBuffer);
-							}
-						}
-						finally
-						{
-							Marshal.FreeHGlobal(regBuffer);
-						}
-					}
-					long next = mbi.BaseAddress.ToInt64() + (long)mbi.RegionSize;
-					if (next <= address.ToInt64())
-					{
-						break;
-					}
-					address = new IntPtr(next);
-				}
-			}
-			finally
-			{
-				Marshal.FreeHGlobal(mbiPtr);
-			}
-		}
+		}		
 	}
 }

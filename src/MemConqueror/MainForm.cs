@@ -175,9 +175,16 @@ namespace MemConqueror
 
 		private void dumpMemoryToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			var item = GetSelectedItem();
-			var procId = (int)item["Id"];
-			MemTool.DumpAllMem((uint)procId);
+			try
+			{
+				var item = GetSelectedItem();
+				var procId = (int)item["Id"];
+				MemTool.DumpAllMem((uint)procId);
+			}
+			catch (Exception ex)
+			{
+				ShowError(ex);
+			}
 		}
 
 		private void GoIntoMemoryToolStripMenuItemClick(object sender, EventArgs e)
