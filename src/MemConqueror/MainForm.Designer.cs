@@ -348,7 +348,7 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MrAddrCol,this.MrNameCol,this.MrSizeCol,this.MrTxtCol});
+            this.MrNameCol,this.MrAddrCol,this.MrSizeCol,this.MrTxtCol});
 			this.dataGridView2.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.RowHeadersVisible = false;
@@ -356,22 +356,22 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.dataGridView2.Size = new System.Drawing.Size(756, 407);
 			this.dataGridView2.TabIndex = 0;					
 			// 
-			// MrAddrColumn
-			// 
-			this.MrAddrCol.HeaderText = "Addr";
-			this.MrAddrCol.Name = "MrAddrCol";
-			// 
-			// MrNameColumn
+			// MrNameCol
 			// 
 			this.MrNameCol.HeaderText = "Name";
 			this.MrNameCol.Name = "MrNameCol";
 			// 
-			// MrSizeColumn
+			// MrAddrCol
+			// 
+			this.MrAddrCol.HeaderText = "Addr";
+			this.MrAddrCol.Name = "MrAddrCol";
+			// 
+			// MrSizeCol
 			// 
 			this.MrSizeCol.HeaderText = "Size";
 			this.MrSizeCol.Name = "MrSizeCol";
 			// 
-			// MrTxtColumn
+			// MrTxtCol
 			// 
 			this.MrTxtCol.HeaderText = "Txt";
 			this.MrTxtCol.Name = "MrTxtCol";					

@@ -34,28 +34,30 @@ namespace MemConqueror
 
 		private void RefreshMemories()
 		{
+			if (lastMem == null)
+				return;
 			var regions = lastMem.ReadAll();
-			var oldIds = dataGridView2.GetIds(0);
+			var oldIds = dataGridView2.GetIds<long>(1);
 			var isDirty = false;
 			foreach (var reg in regions)
 			{
-				var pid = reg.Info.BaseAddress.ToInt32();
-				if (oldIds.Count >= 1 && oldIds.Contains(pid))
+				var rid = reg.Info.BaseAddress.ToInt64();
+				if (oldIds.Count >= 1 && oldIds.Contains(rid))
 				{
-					oldIds.Remove(pid);
+					oldIds.Remove(rid);
 					continue;
 				}
 				var name = reg.Name;
 				var debu = reg.ToStr();
 				var priv = TxtTool.ToByteSize(reg.Info.RegionSize.ToUInt64());
-				object[] args = { pid, name, priv, debu };
+				object[] args = { name, rid, priv, debu };
 				dataGridView2.Rows.Add(args);
 				isDirty = true;
 			}
 			if (oldIds.Count >= 1)
 				foreach (var row in dataGridView2.GetRows().ToArray())
 				{
-					var pid = (int)row.Cells[0].Value;
+					var pid = row.GetId<long>(1);
 					if (!oldIds.Contains(pid))
 						continue;
 					dataGridView2.Rows.Remove(row);
@@ -71,7 +73,7 @@ namespace MemConqueror
 		private void RefreshProcesses()
 		{
 			var procs = Process.GetProcesses();
-			var oldIds = dataGridView1.GetIds(0);
+			var oldIds = dataGridView1.GetIds<int>(0);
 			var isDirty = false;
 			foreach (var proc in procs)
 			{
@@ -93,7 +95,7 @@ namespace MemConqueror
 			if (oldIds.Count >= 1)
 				foreach (var row in dataGridView1.GetRows().ToArray())
 				{
-					var pid = (int)row.Cells[0].Value;
+					var pid = row.GetId<int>(0);
 					if (!oldIds.Contains(pid))
 						continue;
 					dataGridView1.Rows.Remove(row);

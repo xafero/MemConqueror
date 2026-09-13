@@ -22,11 +22,16 @@ namespace MemConqueror
 			dv.Rows.Clear();
 		}
 
-		public static List<int> GetIds(this DataGridView dv, int idx)
+		public static List<T> GetIds<T>(this DataGridView dv, int idx)
 		{
-			return new List<int>(
-				dv.GetRows().Select(r => (int)r.Cells[idx].Value)
+			return new List<T>(
+				dv.GetRows().Select(r => r.GetId<T>(idx))
 			);
+		}
+
+		public static T GetId<T>(this DataGridViewRow r, int idx)
+		{
+			return (T)r.Cells[idx].Value;
 		}
 	}
 }
