@@ -18,19 +18,19 @@ namespace MemConqueror
         public const int MEM_MAPPED = 0x40000;
         public const int MEM_PRIVATE = 0x20000;
 
-        private const uint MEM_TYPE_MEM_PRIVATE = 131072u;
-        private const uint MEM_TYPE_MEM_MAPPED = 262144u;
-        private const uint MEM_TYPE_MEM_IMAGE = 16777216u;
+        private const uint MEM_TYPE_MEM_PRIVATE = 0x20000;
+        private const uint MEM_TYPE_MEM_MAPPED = 0x40000;
+        private const uint MEM_TYPE_MEM_IMAGE = 0x1000000;
 
-        private const uint MEM_STATE_MEM_RESERVE = 8192u;
-        private const uint MEM_STATE_MEM_FREE = 65536u;
-        private const uint MEM_STATE_MEM_COMMIT = 4096u;
+        private const uint MEM_STATE_MEM_RESERVE = 0x2000;
+        private const uint MEM_STATE_MEM_FREE = 0x10000;
+        private const uint MEM_STATE_MEM_COMMIT = 0x1000;
 
-        public const uint PROCESS_VM_OPERATION = 8u;
-        public const uint PROCESS_VM_WRITE = 32u;
+        public const uint PROCESS_VM_OPERATION = 0x8;
+        public const uint PROCESS_VM_WRITE = 0x20;
 
-        public const uint PROCESS_QUERY_INFORMATION = 0x0400;
-        public const uint PROCESS_VM_READ = 0x0010;
+        public const uint PROCESS_QUERY_INFORMATION = 0x400;
+        public const uint PROCESS_VM_READ = 0x10;
 
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern IntPtr OpenProcess(uint access, bool inherit, uint pid);
