@@ -360,6 +360,8 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView2.Size = new System.Drawing.Size(756, 407);
 			this.dataGridView2.TabIndex = 0;					
+this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2CellDoubleClick);
+this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
 			// 
 			// MrNameCol
 			// 
