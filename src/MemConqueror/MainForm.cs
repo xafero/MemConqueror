@@ -56,10 +56,10 @@ namespace MemConqueror
 				}
 				var priv = TxtTool.ToByteSize(reg.Info.RegionSize.ToUInt64());
 				var alb = reg.Info.AllocationBase.ToString("X8");
-				var alp = reg.Info.AllocationProtect.ToString("X8");
-				var sta = reg.Info.State.ToString("X8");
-				var pro = reg.Info.Protect.ToString("X8");
-				var typ = reg.Info.Type.ToString("X8");
+				var alp = EnumTool.GetValue<MemProtect>(reg.Info.AllocationProtect);
+				var sta = EnumTool.GetValue<MemState>(reg.Info.State);
+				var pro = EnumTool.GetValue<MemProtect>(reg.Info.Protect);
+				var typ = EnumTool.GetValue<MemType>(reg.Info.Type);
 				object[] args = { rid, priv, alb, alp, sta, pro, typ };
 				dataGridView2.Rows.Add(args);
 				isDirty = true;

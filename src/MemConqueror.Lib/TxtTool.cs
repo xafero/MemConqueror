@@ -1,6 +1,8 @@
-using ByteSizeLib;
-using System.Linq;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+
+using ByteSizeLib;
 
 namespace MemConqueror
 {
@@ -30,6 +32,14 @@ namespace MemConqueror
 			var parts = text.Split(sep);
 			var tmp = parts[0] + sep;
 			return tmp;
-		}
+		}		
+    }
+    
+    public static class EnumTool
+    {
+		public static T GetValue<T>(object raw) where T : struct
+		{
+    		return (T)Enum.ToObject(typeof(T), raw);
+		}    	
     }
 }
