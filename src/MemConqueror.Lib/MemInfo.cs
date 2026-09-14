@@ -18,30 +18,95 @@ namespace MemConqueror.Lib
 	
 	public enum MemProtect : uint
 	{
-		PAGE_EXECUTE = 0x00000010,
-		PAGE_EXECUTE_READ = 0x00000020,
-		PAGE_EXECUTE_READWRITE = 0x00000040,
-		PAGE_EXECUTE_WRITECOPY = 0x00000080,
-		PAGE_NOACCESS = 0x00000001,
-		PAGE_READONLY = 0x00000002,
-		PAGE_READWRITE = 0x00000004,
-		PAGE_WRITECOPY = 0x00000008,
-		PAGE_GUARD = 0x00000100,
-		PAGE_NOCACHE = 0x00000200,
-		PAGE_WRITECOMBINE = 0x00000400
+		/// <summary>
+		/// PAGE_EXECUTE
+		/// </summary>
+		Exec = 0x00000010,
+		
+		/// <summary>
+		/// PAGE_EXECUTE_READ
+		/// </summary>
+		ExecRead = 0x00000020,
+		
+		/// <summary>
+		/// PAGE_EXECUTE_READWRITE
+		/// </summary>
+		ExecReadWrite = 0x00000040,
+		
+		/// <summary>
+		/// PAGE_EXECUTE_WRITECOPY
+		/// </summary>
+		ExecWriteCopy = 0x00000080,
+		
+		/// <summary>
+		/// PAGE_NOACCESS
+		/// </summary>
+		NoAccess = 0x00000001,
+		
+		/// <summary>
+		/// PAGE_READONLY
+		/// </summary>
+		ReadOnly = 0x00000002,
+		
+		/// <summary>
+		/// PAGE_READWRITE
+		/// </summary>
+		ReadWrite = 0x00000004,
+		
+		/// <summary>
+		/// PAGE_WRITECOPY
+		/// </summary>
+		WriteCopy = 0x00000008,
+		
+		/// <summary>
+		/// PAGE_GUARD
+		/// </summary>
+		Guard = 0x00000100,
+		
+		/// <summary>
+		/// PAGE_NOCACHE
+		/// </summary>
+		NoCache = 0x00000200,
+		
+		/// <summary>
+		/// PAGE_WRITECOMBINE
+		/// </summary>
+		WriteCombine = 0x00000400
 	}
 	
 	public enum MemState : uint
 	{
-		MEM_COMMIT = 0x1000,
-		MEM_RESERVE = 0x2000,
-		MEM_FREE = 0x10000
+		/// <summary>
+		/// MEM_COMMIT
+		/// </summary>
+		Commit = 0x1000,
+		
+		/// <summary>
+		/// MEM_RESERVE
+		/// </summary>
+		Reserve = 0x2000,
+		
+		/// <summary>
+		/// MEM_FREE
+		/// </summary>
+		Free = 0x10000
 	}
 
 	public enum MemType : uint
 	{
-		MEM_IMAGE = 0x1000000,
-		MEM_MAPPED = 0x40000,
-		MEM_PRIVATE = 0x20000
+		/// <summary>
+		/// MEM_IMAGE
+		/// </summary>
+		Image = 0x1000000,
+		
+		/// <summary>
+		/// MEM_MAPPED
+		/// </summary>
+		Mapped = 0x40000,
+		
+		/// <summary>
+		/// MEM_PRIVATE
+		/// </summary>
+		Private = 0x20000
 	}	
 }
