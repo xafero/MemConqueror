@@ -48,7 +48,6 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.MrNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrAddrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrSizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();			
 			this.MrAlBseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -352,7 +351,7 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-				this.MrNameCol,this.MrAddrCol,this.MrSizeCol,
+				this.MrAddrCol,this.MrSizeCol,
 				this.MrAlBseCol,this.MrAlProCol,this.MrStatCol,this.MrProtCol,this.MrTypCol });
 			this.dataGridView2.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView2.Name = "dataGridView2";
@@ -362,11 +361,6 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.dataGridView2.TabIndex = 0;					
 this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2CellDoubleClick);
 this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
-			// 
-			// MrNameCol
-			// 
-			this.MrNameCol.HeaderText = "Name";
-			this.MrNameCol.Name = "MrNameCol";
 			// 
 			// MrAddrCol
 			// 
@@ -464,7 +458,6 @@ this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMou
 		private System.Windows.Forms.TabPage tabPage3;
 		private System.Windows.Forms.DataGridView dataGridView2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrAddrCol;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MrNameCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrSizeCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrAlBseCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrAlProCol;

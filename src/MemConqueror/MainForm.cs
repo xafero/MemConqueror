@@ -37,8 +37,9 @@ namespace MemConqueror
 			if (lastMem == null)
 				return;
 			var regions = lastMem.ReadAll();
-			var oldIds = dataGridView2.GetIds<string>(1);
+			var oldIds = dataGridView2.GetIds<string>(0);
 			var isDirty = false;
+			var isFirst = true;
 			foreach (var reg in regions)
 			{
 				var rid = reg.Info.BaseAddress.ToString("X8");
@@ -48,20 +49,25 @@ namespace MemConqueror
 					continue;
 				}
 				var name = reg.Name;
+				if (isFirst)
+				{
+					tabPage3.Text = "Memory of "+name;
+					isFirst = false;
+				}
 				var priv = TxtTool.ToByteSize(reg.Info.RegionSize.ToUInt64());
 				var alb = reg.Info.AllocationBase.ToString("X8");
 				var alp = reg.Info.AllocationProtect.ToString("X8");
 				var sta = reg.Info.State.ToString("X8");
 				var pro = reg.Info.Protect.ToString("X8");
 				var typ = reg.Info.Type.ToString("X8");
-				object[] args = { name, rid, priv, alb, alp, sta, pro, typ };
+				object[] args = { rid, priv, alb, alp, sta, pro, typ };
 				dataGridView2.Rows.Add(args);
 				isDirty = true;
 			}
 			if (oldIds.Count >= 1)
 				foreach (var row in dataGridView2.GetRows().ToArray())
 				{
-					var pid = row.GetId<string>(1);
+					var pid = row.GetId<string>(0);
 					if (!oldIds.Contains(pid))
 						continue;
 					dataGridView2.Rows.Remove(row);
