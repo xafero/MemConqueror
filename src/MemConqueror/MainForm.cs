@@ -127,6 +127,11 @@ namespace MemConqueror
 				}
 			}
 		}
+		
+		private void dataGridView2_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			// TODO
+		}
 
 		private void killMenuItem_Click(object sender, EventArgs e)
 		{
@@ -202,6 +207,11 @@ namespace MemConqueror
 		private void DataGridView1CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			SwitchToMemory();
+		}
+		
+		private void DataGridView2CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			// TODO
 		}
 		
 		private void SwitchToMemory()
