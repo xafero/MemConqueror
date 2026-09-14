@@ -21,22 +21,22 @@ namespace MemConqueror.Lib
 		/// <summary>
 		/// PAGE_EXECUTE
 		/// </summary>
-		Exec = 0x00000010,
+		Exe = 0x00000010,
 		
 		/// <summary>
 		/// PAGE_EXECUTE_READ
 		/// </summary>
-		ExecRead = 0x00000020,
+		ExeRead = 0x00000020,
 		
 		/// <summary>
 		/// PAGE_EXECUTE_READWRITE
 		/// </summary>
-		ExecReadWrite = 0x00000040,
+		ExeReadWrite = 0x00000040,
 		
 		/// <summary>
 		/// PAGE_EXECUTE_WRITECOPY
 		/// </summary>
-		ExecWriteCopy = 0x00000080,
+		ExeWriteCopy = 0x00000080,
 		
 		/// <summary>
 		/// PAGE_NOACCESS
