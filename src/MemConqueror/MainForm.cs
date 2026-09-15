@@ -19,8 +19,6 @@ namespace MemConqueror
 		private void MainForm_Load(object sender, EventArgs e)
 		{
 			Icon = ResTool.GetIcon("app.ico");
-			listBox1.Font = listBox1.Font.SetMonospace(9);
-			panel1.SetItem(this, null);
 			byteControl1.SetItem(this, null);
 			timer1.Enabled = true;
 		}
@@ -241,9 +239,6 @@ namespace MemConqueror
 			tabPage3.Text = "Memory of "+procName;
 
 			dataGridView2.ClearRows();
-			listBox1.Items.Clear();
-			foreach (var it in lastMem.ReadAll())
-				listBox1.Items.Add(it);
 		}
 
 		private void ShowError(Exception ex)
@@ -251,20 +246,6 @@ namespace MemConqueror
 			var caption = ex.GetType().Name;
 			var text = ex.Message;
 			MessageBox.Show(this, text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-		}
-		
-		private void ListBox1SelectedIndexChanged(object sender, EventArgs e)
-		{
-			var item = listBox1.SelectedItem;
-			if (item is IMemGot)
-			{
-				lastReg = (IMemGot)item;
-				panel1.SetItem(this, lastReg);
-				vScrollBar1.Value = 0;
-				vScrollBar1.Minimum = 0;
-				vScrollBar1.Maximum = GetLineCount(lastReg);
-			}
-			panel1.Refresh();
 		}
 		
 		private int GetLineCount(IMemGot mg)
@@ -285,13 +266,6 @@ namespace MemConqueror
 				yield return it;
 		}
 		
-		private void VScrollBar1ValueChanged(object sender, EventArgs e)
-		{
-			var line = this.vScrollBar1.Value;
-			panel1.Pos = line;
-			panel1.Refresh();
-		}
-
 		private void VScrollBar2ValueChanged(object sender, EventArgs e)
 		{
 			var line = this.vScrollBar2.Value;

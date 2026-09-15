@@ -35,12 +35,6 @@ namespace MemConqueror
 			this.MrStatCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-			this.panel1 = new MemConqueror.ByteControl();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.idLbl = new System.Windows.Forms.Label();
-			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,8 +55,6 @@ namespace MemConqueror
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-			this.tabPage2.SuspendLayout();
-			this.groupBox1.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -75,7 +67,6 @@ namespace MemConqueror
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage3);
-			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Location = new System.Drawing.Point(12, 30);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -236,69 +227,6 @@ namespace MemConqueror
 			this.MrTypCol.Name = "MrTypCol";
 			this.MrTypCol.Width = 56;
 			// 
-			// tabPage2
-			// 
-			this.tabPage2.Controls.Add(this.vScrollBar1);
-			this.tabPage2.Controls.Add(this.panel1);
-			this.tabPage2.Controls.Add(this.groupBox1);
-			this.tabPage2.Controls.Add(this.listBox1);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(768, 419);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Memory";
-			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// vScrollBar1
-			// 
-			this.vScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
-			this.vScrollBar1.Location = new System.Drawing.Point(716, 83);
-			this.vScrollBar1.Name = "vScrollBar1";
-			this.vScrollBar1.Size = new System.Drawing.Size(16, 329);
-			this.vScrollBar1.TabIndex = 7;
-			this.vScrollBar1.ValueChanged += new System.EventHandler(this.VScrollBar1ValueChanged);
-			// 
-			// panel1
-			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
-			this.panel1.BackColor = System.Drawing.Color.White;
-			this.panel1.Location = new System.Drawing.Point(117, 83);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(596, 329);
-			this.panel1.TabIndex = 6;
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.idLbl);
-			this.groupBox1.Location = new System.Drawing.Point(15, 17);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(355, 60);
-			this.groupBox1.TabIndex = 3;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Selected process";
-			// 
-			// idLbl
-			// 
-			this.idLbl.Location = new System.Drawing.Point(19, 26);
-			this.idLbl.Name = "idLbl";
-			this.idLbl.Size = new System.Drawing.Size(64, 16);
-			this.idLbl.TabIndex = 1;
-			this.idLbl.Text = "Id:";
-			// 
-			// listBox1
-			// 
-			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(15, 83);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(83, 329);
-			this.listBox1.TabIndex = 0;
-			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1SelectedIndexChanged);
-			// 
 			// timer1
 			// 
 			this.timer1.Interval = 500;
@@ -438,8 +366,6 @@ namespace MemConqueror
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-			this.tabPage2.ResumeLayout(false);
-			this.groupBox1.ResumeLayout(false);
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
@@ -451,11 +377,6 @@ namespace MemConqueror
 
 		private System.Windows.Forms.VScrollBar vScrollBar2;
 		private MemConqueror.ByteControl byteControl1;
-		private System.Windows.Forms.VScrollBar vScrollBar1;
-		private MemConqueror.ByteControl panel1;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.Label idLbl;
-		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.ToolStripMenuItem goIntoMemoryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dumpMemoryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
@@ -465,7 +386,6 @@ namespace MemConqueror
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
