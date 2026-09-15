@@ -48,6 +48,8 @@ namespace MemConqueror
 		{
 			var item = row.DataBoundItem;
 			if (item == null)
+				item = row.Tag;
+			if (item == null)
 				item = row.Cells.Cast<DataGridViewCell>().ToDictionary(
 					k => k.OwningColumn.HeaderText, v => v.Value);
 			return item;

@@ -62,7 +62,8 @@ namespace MemConqueror
 				var pro = EnumTool.GetValue<MemProtect>(reg.Info.Protect);
 				var typ = EnumTool.GetValue<MemType>(reg.Info.Type);
 				object[] args = { rid, priv, alb, alp, sta, pro, typ };
-				dataGridView2.Rows.Add(args);
+				var dri = dataGridView2.Rows.Add(args);
+				dataGridView2.Rows[dri].Tag = reg;
 				isDirty = true;
 			}
 			if (oldIds.Count >= 1)
