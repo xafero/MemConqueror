@@ -40,7 +40,6 @@ namespace MemConqueror
 			this.panel1 = new MemConqueror.ByteControl();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.idLbl = new System.Windows.Forms.Label();
-			this.nameLbl = new System.Windows.Forms.Label();
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -274,7 +273,6 @@ namespace MemConqueror
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.idLbl);
-			this.groupBox1.Controls.Add(this.nameLbl);
 			this.groupBox1.Location = new System.Drawing.Point(15, 17);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(355, 60);
@@ -289,15 +287,6 @@ namespace MemConqueror
 			this.idLbl.Size = new System.Drawing.Size(64, 16);
 			this.idLbl.TabIndex = 1;
 			this.idLbl.Text = "Id:";
-			// 
-			// nameLbl
-			// 
-			this.nameLbl.AutoEllipsis = true;
-			this.nameLbl.Location = new System.Drawing.Point(89, 26);
-			this.nameLbl.Name = "nameLbl";
-			this.nameLbl.Size = new System.Drawing.Size(243, 20);
-			this.nameLbl.TabIndex = 2;
-			this.nameLbl.Text = "Name:";
 			// 
 			// listBox1
 			// 
@@ -466,7 +455,6 @@ namespace MemConqueror
 		private MemConqueror.ByteControl panel1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label idLbl;
-		private System.Windows.Forms.Label nameLbl;
 		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.ToolStripMenuItem goIntoMemoryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem dumpMemoryToolStripMenuItem;

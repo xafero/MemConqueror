@@ -238,8 +238,7 @@ namespace MemConqueror
 			tabControl1.SelectedIndex = 1;
 			lastProcId = procId;
 			var procName = (string)item["Name"];
-			idLbl.Text = TxtTool.SplitUp(idLbl.Text, ':')+" "+procId;
-			nameLbl.Text = TxtTool.SplitUp(nameLbl.Text, ':')+" "+procName;
+			tabPage3.Text = "Memory of "+procName;
 
 			dataGridView2.ClearRows();
 			listBox1.Items.Clear();
