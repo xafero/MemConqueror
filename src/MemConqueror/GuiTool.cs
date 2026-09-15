@@ -40,7 +40,8 @@ namespace MemConqueror
 			if (sel == null) return null;
 			var itm = GetItem(sel);
 			if (itm == null) return null;
-			var res = (IDictionary<string, object>)itm;
+			var res = itm as IDictionary<string, object>;
+			if (res == null) res = new Dictionary<string, object> { { "obj", itm } };
 			return res;
 		}
 
