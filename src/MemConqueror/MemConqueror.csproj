@@ -38,7 +38,9 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ByteControl.cs" />
+    <Compile Include="ByteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ByteControl.Designer.cs">
       <DependentUpon>ByteControl.cs</DependentUpon>
     </Compile>
