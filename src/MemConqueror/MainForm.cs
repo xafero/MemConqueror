@@ -198,7 +198,7 @@ namespace MemConqueror
 			SwitchToMemory();
 		}
 		
-		private void DataGridView2CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		private void DataGridView2CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			var raw = dataGridView2.GetSelectedItem();
 			var item = raw["obj"];

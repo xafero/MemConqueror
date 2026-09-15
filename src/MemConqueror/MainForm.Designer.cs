@@ -192,7 +192,7 @@ namespace MemConqueror
 			this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView2.Size = new System.Drawing.Size(448, 407);
 			this.dataGridView2.TabIndex = 0;
-			this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2CellDoubleClick);
+			this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2CellClick);
 			this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
 			// 
 			// MrAddrCol
@@ -419,14 +419,14 @@ namespace MemConqueror
 			this.byteControl1.BackColor = System.Drawing.Color.White;
 			this.byteControl1.Location = new System.Drawing.Point(460, 6);
 			this.byteControl1.Name = "byteControl1";
-			this.byteControl1.Size = new System.Drawing.Size(286, 407);
+			this.byteControl1.Size = new System.Drawing.Size(592, 407);
 			this.byteControl1.TabIndex = 1;
 			// 
 			// vScrollBar2
 			// 
 			this.vScrollBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 									| System.Windows.Forms.AnchorStyles.Left)));
-			this.vScrollBar2.Location = new System.Drawing.Point(749, 6);
+			this.vScrollBar2.Location = new System.Drawing.Point(1057, 6);
 			this.vScrollBar2.Name = "vScrollBar2";
 			this.vScrollBar2.Size = new System.Drawing.Size(16, 407);
 			this.vScrollBar2.TabIndex = 2;
