@@ -33,5 +33,24 @@ namespace MemConqueror
 		{
 			return (T)r.Cells[idx].Value;
 		}
+
+		public static IDictionary<string, object> GetSelectedItem(this DataGridView dv)
+		{
+			var sel = dv.GetSelectedRows().FirstOrDefault();
+			if (sel == null) return null;
+			var itm = GetItem(sel);
+			if (itm == null) return null;
+			var res = (IDictionary<string, object>)itm;
+			return res;
+		}
+
+		public static object GetItem(this DataGridViewRow row)
+		{
+			var item = row.DataBoundItem;
+			if (item == null)
+				item = row.Cells.Cast<DataGridViewCell>().ToDictionary(
+					k => k.OwningColumn.HeaderText, v => v.Value);
+			return item;
+		}
 	}
 }
