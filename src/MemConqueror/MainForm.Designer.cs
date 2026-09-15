@@ -26,6 +26,15 @@ namespace MemConqueror
 			this.WorkMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PrivMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PathCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.MrAddrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrSizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrAlBseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrAlProCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrStatCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
 			this.panel1 = new MemConqueror.ByteControl();
@@ -46,32 +55,25 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.MrAddrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MrSizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();			
-			this.MrAlBseCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MrAlProCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MrStatCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();	
+			this.byteControl1 = new MemConqueror.ByteControl();
+			this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.tabPage2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
-			this.tabPage3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
 			// 
 			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Controls.Add(this.tabPage2);
@@ -98,17 +100,17 @@ namespace MemConqueror
 			this.dataGridView1.AllowUserToDeleteRows = false;
 			this.dataGridView1.AllowUserToResizeRows = false;
 			this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+									| System.Windows.Forms.AnchorStyles.Left) 
+									| System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdCol,
-            this.NameCol,
-            this.VirtMemCol,
-            this.WorkMemCol,
-            this.PrivMemCol,
-            this.PathCol});
+									this.IdCol,
+									this.NameCol,
+									this.VirtMemCol,
+									this.WorkMemCol,
+									this.PrivMemCol,
+									this.PathCol});
 			this.dataGridView1.Location = new System.Drawing.Point(6, 6);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersVisible = false;
@@ -154,6 +156,87 @@ namespace MemConqueror
 			this.PathCol.Name = "PathCol";
 			this.PathCol.Width = 54;
 			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.vScrollBar2);
+			this.tabPage3.Controls.Add(this.byteControl1);
+			this.tabPage3.Controls.Add(this.dataGridView2);
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage3.Size = new System.Drawing.Size(768, 419);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "Memory";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.AllowUserToAddRows = false;
+			this.dataGridView2.AllowUserToDeleteRows = false;
+			this.dataGridView2.AllowUserToResizeRows = false;
+			this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
+			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+									this.MrAddrCol,
+									this.MrSizeCol,
+									this.MrAlBseCol,
+									this.MrAlProCol,
+									this.MrStatCol,
+									this.MrProtCol,
+									this.MrTypCol});
+			this.dataGridView2.Location = new System.Drawing.Point(6, 6);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.RowHeadersVisible = false;
+			this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dataGridView2.Size = new System.Drawing.Size(448, 407);
+			this.dataGridView2.TabIndex = 0;
+			this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2CellDoubleClick);
+			this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
+			// 
+			// MrAddrCol
+			// 
+			this.MrAddrCol.HeaderText = "Addr";
+			this.MrAddrCol.Name = "MrAddrCol";
+			this.MrAddrCol.Width = 54;
+			// 
+			// MrSizeCol
+			// 
+			this.MrSizeCol.HeaderText = "Size";
+			this.MrSizeCol.Name = "MrSizeCol";
+			this.MrSizeCol.Width = 52;
+			// 
+			// MrAlBseCol
+			// 
+			this.MrAlBseCol.HeaderText = "Base";
+			this.MrAlBseCol.Name = "MrAlBseCol";
+			this.MrAlBseCol.Width = 56;
+			// 
+			// MrAlProCol
+			// 
+			this.MrAlProCol.HeaderText = "Allocated";
+			this.MrAlProCol.Name = "MrAlProCol";
+			this.MrAlProCol.Width = 76;
+			// 
+			// MrStatCol
+			// 
+			this.MrStatCol.HeaderText = "State";
+			this.MrStatCol.Name = "MrStatCol";
+			this.MrStatCol.Width = 57;
+			// 
+			// MrProtCol
+			// 
+			this.MrProtCol.HeaderText = "Protect";
+			this.MrProtCol.Name = "MrProtCol";
+			this.MrProtCol.Width = 66;
+			// 
+			// MrTypCol
+			// 
+			this.MrTypCol.HeaderText = "Type";
+			this.MrTypCol.Name = "MrTypCol";
+			this.MrTypCol.Width = 56;
+			// 
 			// tabPage2
 			// 
 			this.tabPage2.Controls.Add(this.vScrollBar1);
@@ -171,7 +254,7 @@ namespace MemConqueror
 			// vScrollBar1
 			// 
 			this.vScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.vScrollBar1.Location = new System.Drawing.Point(716, 83);
 			this.vScrollBar1.Name = "vScrollBar1";
 			this.vScrollBar1.Size = new System.Drawing.Size(16, 329);
@@ -181,12 +264,12 @@ namespace MemConqueror
 			// panel1
 			// 
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.panel1.BackColor = System.Drawing.Color.White;
 			this.panel1.Location = new System.Drawing.Point(117, 83);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(596, 329);
-			this.panel1.TabIndex = 6;			
+			this.panel1.TabIndex = 6;
 			// 
 			// groupBox1
 			// 
@@ -219,7 +302,7 @@ namespace MemConqueror
 			// listBox1
 			// 
 			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.Location = new System.Drawing.Point(15, 83);
 			this.listBox1.Name = "listBox1";
@@ -235,10 +318,10 @@ namespace MemConqueror
 			// contextMenuStrip1
 			// 
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.killMenuItem,
-            this.openItsFolderToolStripMenuItem,
-			this.dumpMemoryToolStripMenuItem,
-            this.goIntoMemoryToolStripMenuItem});
+									this.killMenuItem,
+									this.openItsFolderToolStripMenuItem,
+									this.dumpMemoryToolStripMenuItem,
+									this.goIntoMemoryToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.Size = new System.Drawing.Size(162, 70);
 			// 
@@ -256,24 +339,24 @@ namespace MemConqueror
 			this.openItsFolderToolStripMenuItem.Text = "Open its folder";
 			this.openItsFolderToolStripMenuItem.Click += new System.EventHandler(this.openItsFolderToolStripMenuItem_Click);
 			// 
+			// dumpMemoryToolStripMenuItem
+			// 
+			this.dumpMemoryToolStripMenuItem.Name = "dumpMemoryToolStripMenuItem";
+			this.dumpMemoryToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+			this.dumpMemoryToolStripMenuItem.Text = "Dump to file";
+			this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemoryToolStripMenuItemClick);
+			// 
 			// goIntoMemoryToolStripMenuItem
 			// 
 			this.goIntoMemoryToolStripMenuItem.Name = "goIntoMemoryToolStripMenuItem";
 			this.goIntoMemoryToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
 			this.goIntoMemoryToolStripMenuItem.Text = "Go into memory";
-			this.goIntoMemoryToolStripMenuItem.Click += new System.EventHandler(this.GoIntoMemoryToolStripMenuItemClick);					
-			// 
-// dumpMemoryToolStripMenuItem
-// 
-this.dumpMemoryToolStripMenuItem.Name = "dumpMemoryToolStripMenuItem";
-this.dumpMemoryToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-this.dumpMemoryToolStripMenuItem.Text = "Dump to file";
-this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemoryToolStripMenuItemClick);
+			this.goIntoMemoryToolStripMenuItem.Click += new System.EventHandler(this.GoIntoMemoryToolStripMenuItemClick);
 			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+									this.toolStripStatusLabel1});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 477);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(800, 22);
@@ -283,14 +366,14 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			// toolStripStatusLabel1
 			// 
 			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			this.toolStripStatusLabel1.Size = new System.Drawing.Size(16, 17);
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(19, 17);
 			this.toolStripStatusLabel1.Text = "...";
 			// 
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem});
+									this.fileToolStripMenuItem,
+									this.viewToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -300,101 +383,49 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quitToolStripMenuItem});
+									this.quitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
 			this.fileToolStripMenuItem.Text = "File";
 			// 
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
 			this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F10)));
-			this.quitToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+			this.quitToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.quitToolStripMenuItem.Text = "Quit";
 			this.quitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItemClick);
 			// 
 			// viewToolStripMenuItem
 			// 
 			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem});
+									this.refreshToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.viewToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
 			this.viewToolStripMenuItem.Text = "View";
 			// 
 			// refreshToolStripMenuItem
 			// 
 			this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
 			this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
-			// tabPage3
+			// byteControl1
 			// 
-			this.tabPage3.Controls.Add(this.dataGridView2);
-			this.tabPage3.Location = new System.Drawing.Point(4, 22);
-			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(768, 419);
-			this.tabPage3.TabIndex = 2;
-			this.tabPage3.Text = "Memory";
-			this.tabPage3.UseVisualStyleBackColor = true;
+			this.byteControl1.BackColor = System.Drawing.Color.White;
+			this.byteControl1.Location = new System.Drawing.Point(460, 6);
+			this.byteControl1.Name = "byteControl1";
+			this.byteControl1.Size = new System.Drawing.Size(286, 407);
+			this.byteControl1.TabIndex = 1;
 			// 
-			// dataGridView2
+			// vScrollBar2
 			// 
-			this.dataGridView2.AllowUserToAddRows = false;
-			this.dataGridView2.AllowUserToDeleteRows = false;
-			this.dataGridView2.AllowUserToResizeRows = false;
-			this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left))));
-			this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-				this.MrAddrCol,this.MrSizeCol,
-				this.MrAlBseCol,this.MrAlProCol,this.MrStatCol,this.MrProtCol,this.MrTypCol });
-			this.dataGridView2.Location = new System.Drawing.Point(6, 6);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.RowHeadersVisible = false;
-			this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView2.Size = new System.Drawing.Size(448, 407);
-			this.dataGridView2.TabIndex = 0;
-			this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2CellDoubleClick);
-			this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
-			// 
-			// MrAddrCol
-			// 
-			this.MrAddrCol.HeaderText = "Addr";
-			this.MrAddrCol.Name = "MrAddrCol";
-			// 
-			// MrSizeCol
-			// 
-			this.MrSizeCol.HeaderText = "Size";
-			this.MrSizeCol.Name = "MrSizeCol";
-			// 
-			// MrAlBseCol
-			// 
-			this.MrAlBseCol.HeaderText = "Base";
-			this.MrAlBseCol.Name = "MrAlBseCol";			
-			// 
-			// MrAlProCol
-			// 
-			this.MrAlProCol.HeaderText = "Allocated";
-			this.MrAlProCol.Name = "MrAlProCol";
-			// 
-			// MrStatCol
-			// 
-			this.MrStatCol.HeaderText = "State";
-			this.MrStatCol.Name = "MrStatCol";
-			// 
-			// MrProtCol
-			// 
-			this.MrProtCol.HeaderText = "Protect";
-			this.MrProtCol.Name = "MrProtCol";
-			// 
-			// MrTypCol
-			// 
-			this.MrTypCol.HeaderText = "Type";
-			this.MrTypCol.Name = "MrTypCol";			
+			this.vScrollBar2.Location = new System.Drawing.Point(749, 6);
+			this.vScrollBar2.Name = "vScrollBar2";
+			this.vScrollBar2.Size = new System.Drawing.Size(16, 80);
+			this.vScrollBar2.TabIndex = 2;
 			// 
 			// MainForm
 			// 
@@ -411,6 +442,8 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.tabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.tabPage2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.contextMenuStrip1.ResumeLayout(false);
@@ -418,12 +451,11 @@ this.dumpMemoryToolStripMenuItem.Click += new System.EventHandler(this.dumpMemor
 			this.statusStrip1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
-			this.tabPage3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
+		private System.Windows.Forms.VScrollBar vScrollBar2;
+		private MemConqueror.ByteControl byteControl1;
 
 		private System.Windows.Forms.VScrollBar vScrollBar1;
 		private MemConqueror.ByteControl panel1;
