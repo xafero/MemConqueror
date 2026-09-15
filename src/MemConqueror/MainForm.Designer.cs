@@ -414,6 +414,8 @@ namespace MemConqueror
 			// 
 			// byteControl1
 			// 
+			this.byteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.byteControl1.BackColor = System.Drawing.Color.White;
 			this.byteControl1.Location = new System.Drawing.Point(460, 6);
 			this.byteControl1.Name = "byteControl1";
@@ -422,10 +424,13 @@ namespace MemConqueror
 			// 
 			// vScrollBar2
 			// 
+			this.vScrollBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
 			this.vScrollBar2.Location = new System.Drawing.Point(749, 6);
 			this.vScrollBar2.Name = "vScrollBar2";
-			this.vScrollBar2.Size = new System.Drawing.Size(16, 80);
+			this.vScrollBar2.Size = new System.Drawing.Size(16, 407);
 			this.vScrollBar2.TabIndex = 2;
+			this.vScrollBar2.ValueChanged += new System.EventHandler(this.VScrollBar2ValueChanged);
 			// 
 			// MainForm
 			// 
@@ -454,9 +459,9 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+
 		private System.Windows.Forms.VScrollBar vScrollBar2;
 		private MemConqueror.ByteControl byteControl1;
-
 		private System.Windows.Forms.VScrollBar vScrollBar1;
 		private MemConqueror.ByteControl panel1;
 		private System.Windows.Forms.GroupBox groupBox1;

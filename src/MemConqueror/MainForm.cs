@@ -299,5 +299,10 @@ namespace MemConqueror
 			panel1.Pos = line;
 			panel1.Refresh();
 		}
+
+		private void VScrollBar2ValueChanged(object sender, EventArgs e)
+		{
+			// TODO
+		}
 	}
 }
