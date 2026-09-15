@@ -142,14 +142,14 @@ namespace MemConqueror
 
 		private void killMenuItem_Click(object sender, EventArgs e)
 		{
-			var item = GetSelectedItem();
+			var item = dataGridView1.GetSelectedItem();
 			if (item == null) return;
 			ProcTool.Kill((int)item["Id"]);
 		}
 
 		private void openItsFolderToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			var item = GetSelectedItem();
+			var item = dataGridView1.GetSelectedItem();
 			if (item == null) return;
 			var path = Path.GetDirectoryName((string)item["Path"]);
 			ProcTool.Open(path);
@@ -177,7 +177,7 @@ namespace MemConqueror
 		{
 			try
 			{
-				var item = GetSelectedItem();
+				var item = dataGridView1.GetSelectedItem();
 				var procId = (int)item["Id"];
 				MemTool.DumpAllMem((uint)procId);
 			}
@@ -199,13 +199,17 @@ namespace MemConqueror
 		
 		private void DataGridView2CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			var hey = dataGridView2.GetSelectedRows().FirstOrDefault();
-			
-			;
-
-
-			// TODO SwitchToMemory2();
-		}		
+			var item = dataGridView2.GetSelectedItem();
+			if (item is IMemGot)
+			{
+				lastReg = (IMemGot)item;
+				byteControl1.SetItem(this, lastReg);
+				vScrollBar2.Value = 0;
+				vScrollBar2.Minimum = 0;
+				vScrollBar2.Maximum = GetLineCount(lastReg);
+			}
+			byteControl1.Refresh();
+		}
 		
 		private void SwitchToMemory()
 		{
@@ -218,7 +222,7 @@ namespace MemConqueror
 		
 		private void RefreshMemory()
 		{
-			var item = GetSelectedItem();
+			var item = dataGridView1.GetSelectedItem();
 			var procId = (int)item["Id"];
 			try
 			{
