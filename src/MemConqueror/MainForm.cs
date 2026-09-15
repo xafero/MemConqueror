@@ -200,7 +200,8 @@ namespace MemConqueror
 		
 		private void DataGridView2CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			var item = dataGridView2.GetSelectedItem();
+			var raw = dataGridView2.GetSelectedItem();
+			var item = raw["obj"];
 			if (item is IMemGot)
 			{
 				lastReg = (IMemGot)item;
