@@ -21,6 +21,7 @@ namespace MemConqueror
 			Icon = ResTool.GetIcon("app.ico");
 			listBox1.Font = listBox1.Font.SetMonospace(9);
 			panel1.SetItem(this, null);
+			byteControl1.SetItem(this, null);
 			timer1.Enabled = true;
 		}
 
@@ -217,8 +218,13 @@ namespace MemConqueror
 		
 		private void DataGridView2CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
-			// TODO
-		}
+			var hey = dataGridView2.GetSelectedRows().FirstOrDefault();
+			
+			;
+
+
+			// TODO SwitchToMemory2();
+		}		
 		
 		private void SwitchToMemory()
 		{
@@ -302,7 +308,9 @@ namespace MemConqueror
 
 		private void VScrollBar2ValueChanged(object sender, EventArgs e)
 		{
-			// TODO
+			var line = this.vScrollBar2.Value;
+			byteControl1.Pos = line;
+			byteControl1.Refresh();
 		}
 	}
 }
