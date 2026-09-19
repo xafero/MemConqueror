@@ -44,6 +44,7 @@
     <Compile Include="ByteLine.cs" />
     <Compile Include="ByteTool.cs" />
     <Compile Include="FontTool.cs" />
+	<Compile Include="EnumTool.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IByteView.cs" />
     <Compile Include="IMemGot.cs" />
@@ -53,6 +54,9 @@
     <Compile Include="MemInfo.cs" />
     <Compile Include="MemReader.cs" />
     <Compile Include="MemTool.cs" />
+    <Compile Include="MemState.cs" />	
+	<Compile Include="MemProtect.cs" />
+	<Compile Include="MemType.cs" />	
     <Compile Include="ProcMemInfo.cs" />
     <Compile Include="ProcTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
