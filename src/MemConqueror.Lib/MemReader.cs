@@ -27,29 +27,29 @@ namespace MemConqueror.Lib
 
 		protected virtual bool IsUsable(MEMORY_BASIC_INFORMATION mbi)
 		{
-			bool isCommitted = mbi.State == MEM_COMMIT;
-			uint protect = mbi.Protect;
-			bool isReadable = (protect & PAGE_READONLY) != 0
-					|| (protect & PAGE_WRITECOPY) != 0
-					|| (protect & PAGE_READWRITE) != 0
-					|| (protect & PAGE_EXECUTE_READ) != 0
-					|| (protect & PAGE_EXECUTE_WRITECOPY) != 0
-					|| (protect & PAGE_EXECUTE_READWRITE) != 0;
-			bool notGuarded = (protect & PAGE_GUARD) == 0;
+			var isCommitted = mbi.State == MEM_COMMIT;
+			var protect = mbi.Protect;
+			var isReadable = (protect & PAGE_READONLY) != 0
+			                 || (protect & PAGE_WRITECOPY) != 0
+			                 || (protect & PAGE_READWRITE) != 0
+			                 || (protect & PAGE_EXECUTE_READ) != 0
+			                 || (protect & PAGE_EXECUTE_WRITECOPY) != 0
+			                 || (protect & PAGE_EXECUTE_READWRITE) != 0;
+			var notGuarded = (protect & PAGE_GUARD) == 0;
 			return isCommitted && isReadable && notGuarded;
 		}
 
 		protected virtual byte[] Read(MEMORY_BASIC_INFORMATION mbi)
 		{
-			int regSize = (int)mbi.RegionSize;
-			IntPtr regBuffer = Marshal.AllocHGlobal(regSize);
+			var regSize = (int)mbi.RegionSize;
+			var regBuffer = Marshal.AllocHGlobal(regSize);
 			try
 			{
 				UIntPtr bytesRead;
 				if (Win32.ReadProcessMemory(_handle, mbi.BaseAddress, regBuffer, (UIntPtr)regSize,
 											out bytesRead) && bytesRead.ToUInt32() != 0)
 				{
-					byte[] manBuffer = new byte[(uint)bytesRead.ToUInt32()];
+					var manBuffer = new byte[(uint)bytesRead.ToUInt32()];
 					Marshal.Copy(regBuffer, manBuffer, 0, manBuffer.Length);
 					return manBuffer;
 				}
@@ -71,12 +71,12 @@ namespace MemConqueror.Lib
 		public IEnumerable<IMemGot> ReadAll()
 		{
 			var is32Bit = IntPtr.Size == 4;
-			Type mbiType = typeof(MEMORY_BASIC_INFORMATION);
-			int mbiSize = Marshal.SizeOf(mbiType);
-			IntPtr mbiPtr = Marshal.AllocHGlobal(mbiSize);
+			var mbiType = typeof(MEMORY_BASIC_INFORMATION);
+			var mbiSize = Marshal.SizeOf(mbiType);
+			var mbiPtr = Marshal.AllocHGlobal(mbiSize);
 			try
 			{
-				IntPtr address = IntPtr.Zero;
+				var address = IntPtr.Zero;
 				while ((int)Win32.VirtualQueryEx(_handle, address, mbiPtr, (UIntPtr)mbiSize) != 0)
 				{
 					var mbi = (MEMORY_BASIC_INFORMATION)Marshal.PtrToStructure(mbiPtr, mbiType);
@@ -85,7 +85,7 @@ namespace MemConqueror.Lib
 						var it = Get(mbi);
 						if (it != null) yield return it;
 					}
-					long next = mbi.BaseAddress.ToInt64() + (long)mbi.RegionSize;
+					var next = mbi.BaseAddress.ToInt64() + (long)mbi.RegionSize;
 					var go = is32Bit ? 
 								 (uint)next > (uint)address.ToInt64() : 
 								(ulong)next > (ulong)address.ToInt64();

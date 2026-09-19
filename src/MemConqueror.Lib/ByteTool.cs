@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 
 namespace MemConqueror.Lib
 {
 	public static class ByteTool
 	{
 		public const int DefaultHexWidth = 16;
-			
+
 		public static IEnumerable<ByteLine> ToHex(byte[] bytes, int lineNo, int count)
 		{
 			var width = DefaultHexWidth;
@@ -21,26 +22,26 @@ namespace MemConqueror.Lib
 				addr += width;
 			}
 		}
-		
+
 		public static string ToHexStr(byte[] bytes, int offset, int width)
 		{
 			var txt = string.Empty;
-			for (int i = 0; i < width; i++)
+			for (var i = 0; i < width; i++)
 			{
 				var idx = offset + i;
 				if (idx >= bytes.Length)
 					continue;
 				var bit = bytes[idx];
-				var sp = i % 2 == 0 ? " ": "";
+				var sp = i % 2 == 0 ? " " : "";
 				txt += string.Format("{0}{1:X2}", sp, bit);
 			}
 			return txt;
 		}
-		
+
 		public static string ToTxtStr(byte[] bytes, int offset, int width)
 		{
 			var txt = string.Empty;
-			for (int i = 0; i < width; i++) 
+			for (var i = 0; i < width; i++)
 			{
 				var idx = offset + i;
 				if (idx >= bytes.Length)
@@ -54,19 +55,11 @@ namespace MemConqueror.Lib
 
 		public static byte[] FromHexStr(string txt)
 		{
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			throw new System.NotImplementedException();
+			var res = new byte[txt.Length / 2];
+			for (var i = 0; i < res.Length; i++)
+				res[i] = byte.Parse(txt.Substring(i * 2, 2),
+					NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+			return res;
 		}
 	}
 }

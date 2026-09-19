@@ -10,7 +10,7 @@ namespace MemConqueror.Lib
 	{
 		public static string ToStr(this IMemGot mg)
 		{
-			StringBuilder bld = new StringBuilder();
+			var bld = new StringBuilder();
 			bld.Append("[MG]");
 			bld.AppendFormat(" Name={0}", mg.Name);
 			var buff = mg.Buffer;
@@ -22,7 +22,7 @@ namespace MemConqueror.Lib
 
 		public static string ToStr(this MEMORY_BASIC_INFORMATION mbi)
 		{
-			StringBuilder bld = new StringBuilder();
+			var bld = new StringBuilder();
 			bld.Append("[MBI]");
 			bld.AppendFormat(" BaseAddress={0:X8}", mbi.BaseAddress.ToInt32());
 			bld.AppendFormat(" AllocationBase={0:X8}", mbi.AllocationBase.ToInt32());
@@ -37,14 +37,14 @@ namespace MemConqueror.Lib
 		
 		public static IntPtr OpenProc(uint pid, out string pName, bool rw)
 		{
-			Process proc = Process.GetProcessById((int)pid);
+			var proc = Process.GetProcessById((int)pid);
 			pName = proc.ProcessName.Replace(' ', '_');
 			var acc = Win32.PROCESS_VM_READ | Win32.PROCESS_QUERY_INFORMATION;
 			if (rw)
 			{
 				acc |= Win32.PROCESS_VM_OPERATION | Win32.PROCESS_VM_WRITE;
 			}
-			uint pac = (uint)acc;
+			var pac = (uint)acc;
 			var hProc = Win32.OpenProcess(pac, false, pid);
 			if (hProc == null || hProc == IntPtr.Zero)
 			{
@@ -56,18 +56,18 @@ namespace MemConqueror.Lib
 		
 		public static void DumpAllMem(uint pid)
 		{
-			string bName = string.Format("proc_{0}_dmp", pid);
-			string fName = bName + ".bin";
+			var bName = string.Format("proc_{0}_dmp", pid);
+			var fName = bName + ".bin";
 			var enc = Encoding.ASCII;
-			using (FileStream outPut = File.Create(fName))
+			using (var outPut = File.Create(fName))
 			{
 				using (var mem = new MemReader(pid))
 				{
 					foreach (MemGot item in mem.ReadAll())
 					{
-						byte[] debug = enc.GetBytes(item.Info.ToStr() + "\r\n");
+						var debug = enc.GetBytes(item.Info.ToStr() + "\r\n");
 						outPut.Write(debug, 0, debug.Length);
-						byte[] array = item.Buffer;
+						var array = item.Buffer;
 						outPut.Write(array, 0, item.Buffer.Length);
 					}
 				}
