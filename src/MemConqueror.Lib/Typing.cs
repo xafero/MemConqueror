@@ -77,7 +77,7 @@ namespace MemConqueror.Lib
                     yield return Bytes.FromFloat64(f64, EndMode.WS);
                     break;
                 case DataType.ByteArray:
-                    var ba = Convert.FromHexString(txt.Replace("0x", ""));
+                    var ba = ByteTool.FromHexStr(txt.Replace("0x", ""));
                     yield return Bytes.FromArray(ba, EndMode.LE);
                     yield return Bytes.FromArray(ba, EndMode.BE);
                     yield return Bytes.FromArray(ba, EndMode.WS);

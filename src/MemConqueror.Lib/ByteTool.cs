@@ -51,5 +51,22 @@ namespace MemConqueror.Lib
 			}
 			return txt;
 		}
+
+		public static byte[] FromHexStr(string txt)
+		{
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			throw new System.NotImplementedException();
+		}
 	}
 }
