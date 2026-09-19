@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using ByteSizeLib;
 
-namespace MemConqueror
+namespace MemConqueror.Lib
 {
     public static class TxtTool
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace MemConqueror
+namespace MemConqueror.Lib
 {
 	public static class ResTool
 	{

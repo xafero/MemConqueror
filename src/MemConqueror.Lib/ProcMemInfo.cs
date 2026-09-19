@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 // ReSharper disable InconsistentNaming
 
-namespace MemConqueror
+namespace MemConqueror.Lib
 {
     /// <summary>
     /// PROCESS_MEMORY_COUNTERS

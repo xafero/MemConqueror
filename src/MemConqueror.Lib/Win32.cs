@@ -1,10 +1,10 @@
 using System;
 using System.Runtime.InteropServices;
-using PROCESS_MEMORY_COUNTERS = MemConqueror.ProcMemInfo;
+using PROCESS_MEMORY_COUNTERS = MemConqueror.Lib.ProcMemInfo;
 
 // ReSharper disable InconsistentNaming
 
-namespace MemConqueror
+namespace MemConqueror.Lib
 {
     public static class Win32
     {

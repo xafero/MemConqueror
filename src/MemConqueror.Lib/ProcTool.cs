@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Management;
 using System.Diagnostics;
+using System.Management;
 using System.Runtime.InteropServices;
-using PROCESS_MEMORY_COUNTERS = MemConqueror.ProcMemInfo;
+using PROCESS_MEMORY_COUNTERS = MemConqueror.Lib.ProcMemInfo;
 
 // ReSharper disable UseObjectOrCollectionInitializer
 
-namespace MemConqueror
+namespace MemConqueror.Lib
 {
     public static class ProcTool
     {

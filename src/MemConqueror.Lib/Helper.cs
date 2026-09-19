@@ -1,6 +1,6 @@
 using System;
 
-namespace MemConqueror
+namespace MemConqueror.Lib
 {
     public static class Helper
     {
