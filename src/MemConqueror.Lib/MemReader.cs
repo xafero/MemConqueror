@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using MEMORY_BASIC_INFORMATION = MemConqueror.Lib.MemInfo;
 
+// ReSharper disable InlineOutVariableDeclaration
+// ReSharper disable UseStringInterpolation
+// ReSharper disable ArrangeAccessorOwnerBody
+
 namespace MemConqueror.Lib
 {
 	public class MemReader : IDisposable
