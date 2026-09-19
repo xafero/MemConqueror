@@ -8,6 +8,13 @@ namespace MemConqueror.Lib
 {
     public static class Typing
     {
+        static Typing()
+        {
+            #if NET10_0
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            #endif
+        }
+        
         private static readonly Encoding Ansi = Encoding.GetEncoding(1252);
 
         internal static IEnumerable<byte[]> Parse(string txt, DataType type)
