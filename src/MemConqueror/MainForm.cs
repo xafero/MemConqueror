@@ -278,12 +278,26 @@ namespace MemConqueror
 		
 		private void DataTypeBoxSelectedIndexChanged(object sender, EventArgs e)
 		{
-			var item = (DataType)dataTypeBox.SelectedItem;
-			if (item == default(DataType)) return;
+			RefreshSearchTerms();
+		}
+		
+		private void DataTxtBoxTextChanged(object sender, EventArgs e)
+		{
+			RefreshSearchTerms();
+		}
+		
+		private void RefreshSearchTerms()
+		{
+			var raw = dataTypeBox.SelectedItem;
+			if (raw == null) return;
+			var kind = (DataType)raw;
+			if (kind == default(DataType)) return;
 			var text = dataTxtBox.Text;
 			if (text == null) return;
-			
-			;
-		}
+			dataCndBox.Items.Clear();
+			var dict = Typing.Parse(text, kind).ToDict();
+			foreach (var item in dict)
+				dataCndBox.Items.Add(item.Key);
+		}		
 	}
 }

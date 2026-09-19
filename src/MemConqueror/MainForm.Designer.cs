@@ -38,6 +38,7 @@ namespace MemConqueror
 			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.dataCndBox = new System.Windows.Forms.ListBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.searchBtn = new System.Windows.Forms.Button();
 			this.dataTypeBox = new System.Windows.Forms.ComboBox();
@@ -257,6 +258,7 @@ namespace MemConqueror
 			// 
 			// tabPage4
 			// 
+			this.tabPage4.Controls.Add(this.dataCndBox);
 			this.tabPage4.Controls.Add(this.groupBox1);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
@@ -265,6 +267,14 @@ namespace MemConqueror
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "Changes";
 			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
+			// dataCndBox
+			// 
+			this.dataCndBox.FormattingEnabled = true;
+			this.dataCndBox.Location = new System.Drawing.Point(373, 26);
+			this.dataCndBox.Name = "dataCndBox";
+			this.dataCndBox.Size = new System.Drawing.Size(210, 56);
+			this.dataCndBox.TabIndex = 3;
 			// 
 			// groupBox1
 			// 
@@ -303,6 +313,7 @@ namespace MemConqueror
 			this.dataTxtBox.Name = "dataTxtBox";
 			this.dataTxtBox.Size = new System.Drawing.Size(130, 20);
 			this.dataTxtBox.TabIndex = 1;
+			this.dataTxtBox.TextChanged += new System.EventHandler(this.DataTxtBoxTextChanged);
 			// 
 			// timer1
 			// 
@@ -434,6 +445,7 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ListBox dataCndBox;
 		private System.Windows.Forms.Button searchBtn;
 		private System.Windows.Forms.TextBox dataTxtBox;
 		private System.Windows.Forms.GroupBox groupBox1;

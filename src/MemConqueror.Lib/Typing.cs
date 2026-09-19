@@ -16,8 +16,19 @@ namespace MemConqueror.Lib
         }
         
         private static readonly Encoding Ansi = Encoding.GetEncoding(1252);
+        
+        public static IDictionary<string, byte[]> ToDict(this IEnumerable<byte[]> items)
+        {
+        	var dict = new Dictionary<string, byte[]>();
+        	foreach (var array in items)
+        	{
+        		var hex = Bytes.ToHex(array);
+        		dict[hex] = array;
+        	}
+        	return dict;
+        }
 
-        internal static IEnumerable<byte[]> Parse(string txt, DataType type)
+        public static IEnumerable<byte[]> Parse(string txt, DataType type)
         {
             switch (type)
             {
