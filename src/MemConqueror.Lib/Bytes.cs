@@ -15,71 +15,71 @@ namespace MemConqueror.Lib
 
         public static byte[] FromInt8(sbyte value, EndMode mode)
         {
-            var b0 = (byte)value;
+        	var b0 = unchecked((byte)value);
             return FromArray(new byte[] { b0 }, mode);
         }
 
         public static byte[] FromUInt8(byte value, EndMode mode)
         {
-            var b0 = value;
+        	var b0 = unchecked(value);
             return FromArray(new byte[] { b0 }, mode);
         }
 
         public static byte[] FromInt16(short value, EndMode mode)
         {
-            var b1 = (byte)(value >> 8);
-            var b2 = (byte)(value & 0xFF);
+        	var b1 = unchecked((byte)(value >> 8));
+        	var b2 = unchecked((byte)(value & 0xFF));
             return FromArray(new byte[] { b2, b1 }, mode);
         }
 
         public static byte[] FromUInt16(ushort value, EndMode mode)
         {
-            var b1 = (byte)(value >> 8);
-            var b2 = (byte)(value & 0xFF);
+        	var b1 = unchecked((byte)(value >> 8));
+        	var b2 = unchecked((byte)(value & 0xFF));
             return FromArray(new byte[] { b2, b1 }, mode);
         }
 
         public static byte[] FromInt32(int value, EndMode mode)
         {
-            var b1 = (byte)(value >> 24);
-            var b2 = (byte)(value >> 16);
-            var b3 = (byte)(value >> 8);
-            var b4 = (byte)(value & 0xFF);
+        	var b1 = unchecked((byte)(value >> 24));
+        	var b2 = unchecked((byte)(value >> 16));
+        	var b3 = unchecked((byte)(value >> 8));
+        	var b4 = unchecked((byte)(value & 0xFF));
             return FromArray(new byte[] { b4, b3, b2, b1 }, mode);
         }
 
         public static byte[] FromUInt32(uint value, EndMode mode)
         {
-            var b1 = (byte)(value >> 24);
-            var b2 = (byte)(value >> 16);
-            var b3 = (byte)(value >> 8);
-            var b4 = (byte)(value & 0xFF);
+            var b1 = unchecked((byte)(value >> 24));
+            var b2 = unchecked((byte)(value >> 16));
+            var b3 = unchecked((byte)(value >> 8));
+            var b4 = unchecked((byte)(value & 0xFF));
             return FromArray(new byte[] { b4, b3, b2, b1 }, mode);
         }
 
         public static byte[] FromInt64(long value, EndMode mode)
         {
-            var b1 = (byte)(value >> 56);
-            var b2 = (byte)(value >> 48);
-            var b3 = (byte)(value >> 40);
-            var b4 = (byte)(value >> 32);
-            var b5 = (byte)(value >> 24);
-            var b6 = (byte)(value >> 16);
-            var b7 = (byte)(value >> 8);
-            var b8 = (byte)(value & 0xFF);
+            var b1 = unchecked((byte)(value >> 56));
+            var b2 = unchecked((byte)(value >> 48));
+            var b3 = unchecked((byte)(value >> 40));
+            var b4 = unchecked((byte)(value >> 32));
+            var b5 = unchecked((byte)(value >> 24));
+            var b6 = unchecked((byte)(value >> 16));
+            var b7 = unchecked((byte)(value >> 8));
+            var b8 = unchecked((byte)(value & 0xFF));
             return FromArray(new byte[] { b8, b7, b6, b5, b4, b3, b2, b1 }, mode);
         }
 
         public static byte[] FromUInt64(ulong value, EndMode mode)
         {
-            var b1 = (byte)(value >> 56);
-            var b2 = (byte)(value >> 48);
-            var b3 = (byte)(value >> 40);
-            var b4 = (byte)(value >> 32);
-            var b5 = (byte)(value >> 24);
-            var b6 = (byte)(value >> 16);
-            var b7 = (byte)(value >> 8);
-            var b8 = (byte)(value & 0xFF);
+        	var b1 = unchecked((byte)(value >> 56));
+            var b2 = unchecked((byte)(value >> 48));
+            var b3 = unchecked((byte)(value >> 40));
+            var b4 = unchecked((byte)(value >> 32));
+            var b5 = unchecked((byte)(value >> 24));
+            var b6 = unchecked((byte)(value >> 16));
+            var b7 = unchecked((byte)(value >> 8));
+            var b8 = unchecked((byte)(value & 0xFF));
             return FromArray(new byte[] { b8, b7, b6, b5, b4, b3, b2, b1 }, mode);
         }
 
