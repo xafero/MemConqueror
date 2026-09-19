@@ -275,5 +275,15 @@ namespace MemConqueror
 			byteControl1.Pos = line;
 			byteControl1.Refresh();
 		}
+		
+		private void DataTypeBoxSelectedIndexChanged(object sender, EventArgs e)
+		{
+			var item = (DataType)dataTypeBox.SelectedItem;
+			if (item == default(DataType)) return;
+			var text = dataTxtBox.Text;
+			if (text == null) return;
+			
+			;
+		}
 	}
 }

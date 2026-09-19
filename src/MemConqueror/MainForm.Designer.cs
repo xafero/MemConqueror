@@ -39,6 +39,7 @@ namespace MemConqueror
 			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.searchBtn = new System.Windows.Forms.Button();
 			this.dataTypeBox = new System.Windows.Forms.ComboBox();
 			this.dataTxtBox = new System.Windows.Forms.TextBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -54,7 +55,6 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.searchBtn = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -278,6 +278,15 @@ namespace MemConqueror
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Terms";
 			// 
+			// searchBtn
+			// 
+			this.searchBtn.Location = new System.Drawing.Point(254, 28);
+			this.searchBtn.Name = "searchBtn";
+			this.searchBtn.Size = new System.Drawing.Size(71, 23);
+			this.searchBtn.TabIndex = 3;
+			this.searchBtn.Text = "Search";
+			this.searchBtn.UseVisualStyleBackColor = true;
+			// 
 			// dataTypeBox
 			// 
 			this.dataTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -286,10 +295,11 @@ namespace MemConqueror
 			this.dataTypeBox.Name = "dataTypeBox";
 			this.dataTypeBox.Size = new System.Drawing.Size(79, 21);
 			this.dataTypeBox.TabIndex = 0;
+			this.dataTypeBox.SelectedIndexChanged += new System.EventHandler(this.DataTypeBoxSelectedIndexChanged);
 			// 
 			// dataTxtBox
 			// 
-			this.dataTxtBox.Location = new System.Drawing.Point(106, 30);
+			this.dataTxtBox.Location = new System.Drawing.Point(111, 30);
 			this.dataTxtBox.Name = "dataTxtBox";
 			this.dataTxtBox.Size = new System.Drawing.Size(130, 20);
 			this.dataTxtBox.TabIndex = 1;
@@ -395,15 +405,6 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
-			// 
-			// searchBtn
-			// 
-			this.searchBtn.Location = new System.Drawing.Point(251, 28);
-			this.searchBtn.Name = "searchBtn";
-			this.searchBtn.Size = new System.Drawing.Size(71, 23);
-			this.searchBtn.TabIndex = 3;
-			this.searchBtn.Text = "Search";
-			this.searchBtn.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
