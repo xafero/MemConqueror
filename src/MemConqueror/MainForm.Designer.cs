@@ -38,7 +38,9 @@ namespace MemConqueror
 			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.dataTypeBox = new System.Windows.Forms.ComboBox();
+			this.dataTxtBox = new System.Windows.Forms.TextBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,12 +54,14 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.searchBtn = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.tabPage4.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -253,7 +257,7 @@ namespace MemConqueror
 			// 
 			// tabPage4
 			// 
-			this.tabPage4.Controls.Add(this.dataTypeBox);
+			this.tabPage4.Controls.Add(this.groupBox1);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -262,14 +266,33 @@ namespace MemConqueror
 			this.tabPage4.Text = "Changes";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.searchBtn);
+			this.groupBox1.Controls.Add(this.dataTypeBox);
+			this.groupBox1.Controls.Add(this.dataTxtBox);
+			this.groupBox1.Location = new System.Drawing.Point(15, 15);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(343, 74);
+			this.groupBox1.TabIndex = 2;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Terms";
+			// 
 			// dataTypeBox
 			// 
 			this.dataTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.dataTypeBox.FormattingEnabled = true;
-			this.dataTypeBox.Location = new System.Drawing.Point(83, 63);
+			this.dataTypeBox.Location = new System.Drawing.Point(21, 30);
 			this.dataTypeBox.Name = "dataTypeBox";
 			this.dataTypeBox.Size = new System.Drawing.Size(79, 21);
 			this.dataTypeBox.TabIndex = 0;
+			// 
+			// dataTxtBox
+			// 
+			this.dataTxtBox.Location = new System.Drawing.Point(106, 30);
+			this.dataTxtBox.Name = "dataTxtBox";
+			this.dataTxtBox.Size = new System.Drawing.Size(130, 20);
+			this.dataTxtBox.TabIndex = 1;
 			// 
 			// timer1
 			// 
@@ -373,6 +396,15 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
+			// searchBtn
+			// 
+			this.searchBtn.Location = new System.Drawing.Point(251, 28);
+			this.searchBtn.Name = "searchBtn";
+			this.searchBtn.Size = new System.Drawing.Size(71, 23);
+			this.searchBtn.TabIndex = 3;
+			this.searchBtn.Text = "Search";
+			this.searchBtn.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,6 +423,8 @@ namespace MemConqueror
 			this.tabPage3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.tabPage4.ResumeLayout(false);
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
@@ -399,6 +433,9 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button searchBtn;
+		private System.Windows.Forms.TextBox dataTxtBox;
+		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.ComboBox dataTypeBox;
 		private System.Windows.Forms.TabPage tabPage4;
 
