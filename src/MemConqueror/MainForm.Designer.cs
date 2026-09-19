@@ -37,6 +37,7 @@ namespace MemConqueror
 			this.MrStatCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.killMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +51,13 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.dataTypeBox = new System.Windows.Forms.ComboBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			this.tabPage4.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -249,6 +251,17 @@ namespace MemConqueror
 			this.MrTypCol.Name = "MrTypCol";
 			this.MrTypCol.Width = 56;
 			// 
+			// tabPage4
+			// 
+			this.tabPage4.Controls.Add(this.dataTypeBox);
+			this.tabPage4.Location = new System.Drawing.Point(4, 22);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(768, 419);
+			this.tabPage4.TabIndex = 3;
+			this.tabPage4.Text = "Changes";
+			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
 			// timer1
 			// 
 			this.timer1.Interval = 500;
@@ -351,15 +364,14 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
-			// tabPage4
+			// dataTypeBox
 			// 
-			this.tabPage4.Location = new System.Drawing.Point(4, 22);
-			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(768, 419);
-			this.tabPage4.TabIndex = 3;
-			this.tabPage4.Text = "Changes";
-			this.tabPage4.UseVisualStyleBackColor = true;
+			this.dataTypeBox.FormattingEnabled = true;
+			this.dataTypeBox.Location = new System.Drawing.Point(185, 155);
+			this.dataTypeBox.Name = "dataTypeBox";
+			this.dataTypeBox.Size = new System.Drawing.Size(121, 21);
+			this.dataTypeBox.TabIndex = 0;
+			this.dataTypeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			// 
 			// MainForm
 			// 
@@ -378,6 +390,7 @@ namespace MemConqueror
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			this.tabPage4.ResumeLayout(false);
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
@@ -386,6 +399,7 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ComboBox dataTypeBox;
 		private System.Windows.Forms.TabPage tabPage4;
 
 		private System.Windows.Forms.VScrollBar vScrollBar2;

@@ -20,6 +20,9 @@ namespace MemConqueror
 		{
 			Icon = ResTool.GetIcon("app.ico");
 			byteControl1.SetItem(this, null);
+			dataTypeBox.Items.Clear();
+			foreach (var dataType in Enum.GetValues(typeof(DataType)).Cast<DataType>().Skip(1))
+				dataTypeBox.Items.Add(dataType);
 			timer1.Enabled = true;
 		}
 
