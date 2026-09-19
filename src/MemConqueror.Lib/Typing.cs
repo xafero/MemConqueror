@@ -24,61 +24,71 @@ namespace MemConqueror.Lib
                 case DataType.None:
                     yield break;
                 case DataType.Int8:
-                    _ = sbyte.TryParse(txt, out var i8);
+                    sbyte i8;
+                    sbyte.TryParse(txt, out i8);
                     yield return Bytes.FromInt8(i8, EndMode.LE);
                     yield return Bytes.FromInt8(i8, EndMode.BE);
                     yield return Bytes.FromInt8(i8, EndMode.WS);
                     break;
                 case DataType.Int16:
-                    _ = short.TryParse(txt, out var i16);
+                    short i16;
+                    short.TryParse(txt, out i16);
                     yield return Bytes.FromInt16(i16, EndMode.LE);
                     yield return Bytes.FromInt16(i16, EndMode.BE);
                     yield return Bytes.FromInt16(i16, EndMode.WS);
                     break;
                 case DataType.Int32:
-                    _ = int.TryParse(txt, out var i32);
+                    int i32;
+                    int.TryParse(txt, out i32);
                     yield return Bytes.FromInt32(i32, EndMode.LE);
                     yield return Bytes.FromInt32(i32, EndMode.BE);
                     yield return Bytes.FromInt32(i32, EndMode.WS);
                     break;
                 case DataType.Int64:
-                    _ = long.TryParse(txt, out var i64);
+                    long i64;
+                    long.TryParse(txt, out i64);
                     yield return Bytes.FromInt64(i64, EndMode.LE);
                     yield return Bytes.FromInt64(i64, EndMode.BE);
                     yield return Bytes.FromInt64(i64, EndMode.WS);
                     break;
                 case DataType.UInt8:
-                    _ = byte.TryParse(txt, out var uI8);
+                    byte uI8;
+                    byte.TryParse(txt, out uI8);
                     yield return Bytes.FromUInt8(uI8, EndMode.LE);
                     yield return Bytes.FromUInt8(uI8, EndMode.BE);
                     yield return Bytes.FromUInt8(uI8, EndMode.WS);
                     break;
                 case DataType.UInt16:
-                    _ = ushort.TryParse(txt, out var uI16);
+                    ushort uI16;
+                    ushort.TryParse(txt, out uI16);
                     yield return Bytes.FromUInt16(uI16, EndMode.LE);
                     yield return Bytes.FromUInt16(uI16, EndMode.BE);
                     yield return Bytes.FromUInt16(uI16, EndMode.WS);
                     break;
                 case DataType.UInt32:
-                    _ = uint.TryParse(txt, out var uI32);
+                    uint uI32;
+                    uint.TryParse(txt, out uI32);
                     yield return Bytes.FromUInt32(uI32, EndMode.LE);
                     yield return Bytes.FromUInt32(uI32, EndMode.BE);
                     yield return Bytes.FromUInt32(uI32, EndMode.WS);
                     break;
                 case DataType.UInt64:
-                    _ = ulong.TryParse(txt, out var uI64);
+                    ulong uI64;
+                    ulong.TryParse(txt, out uI64);
                     yield return Bytes.FromUInt64(uI64, EndMode.LE);
                     yield return Bytes.FromUInt64(uI64, EndMode.BE);
                     yield return Bytes.FromUInt64(uI64, EndMode.WS);
                     break;
                 case DataType.Float32:
-                    _ = float.TryParse(txt, out var f32);
+                    float f32;
+                    float.TryParse(txt, out f32);
                     yield return Bytes.FromFloat32(f32, EndMode.LE);
                     yield return Bytes.FromFloat32(f32, EndMode.BE);
                     yield return Bytes.FromFloat32(f32, EndMode.WS);
                     break;
                 case DataType.Float64:
-                    _ = double.TryParse(txt, out var f64);
+                    double f64;
+                    double.TryParse(txt, out f64);
                     yield return Bytes.FromFloat64(f64, EndMode.LE);
                     yield return Bytes.FromFloat64(f64, EndMode.BE);
                     yield return Bytes.FromFloat64(f64, EndMode.WS);
