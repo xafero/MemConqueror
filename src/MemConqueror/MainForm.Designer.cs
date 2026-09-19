@@ -27,6 +27,8 @@ namespace MemConqueror
 			this.PrivMemCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.PathCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
+			this.byteControl1 = new MemConqueror.ByteControl();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.MrAddrCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrSizeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +50,7 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.byteControl1 = new MemConqueror.ByteControl();
-			this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,6 +68,7 @@ namespace MemConqueror
 									| System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage3);
+			this.tabControl1.Controls.Add(this.tabPage4);
 			this.tabControl1.Location = new System.Drawing.Point(12, 30);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -158,6 +160,26 @@ namespace MemConqueror
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Memory";
 			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// vScrollBar2
+			// 
+			this.vScrollBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
+			this.vScrollBar2.Location = new System.Drawing.Point(1057, 6);
+			this.vScrollBar2.Name = "vScrollBar2";
+			this.vScrollBar2.Size = new System.Drawing.Size(16, 407);
+			this.vScrollBar2.TabIndex = 2;
+			this.vScrollBar2.ValueChanged += new System.EventHandler(this.VScrollBar2ValueChanged);
+			// 
+			// byteControl1
+			// 
+			this.byteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+									| System.Windows.Forms.AnchorStyles.Left)));
+			this.byteControl1.BackColor = System.Drawing.Color.White;
+			this.byteControl1.Location = new System.Drawing.Point(460, 6);
+			this.byteControl1.Name = "byteControl1";
+			this.byteControl1.Size = new System.Drawing.Size(592, 407);
+			this.byteControl1.TabIndex = 1;
 			// 
 			// dataGridView2
 			// 
@@ -329,25 +351,15 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
-			// byteControl1
+			// tabPage4
 			// 
-			this.byteControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
-			this.byteControl1.BackColor = System.Drawing.Color.White;
-			this.byteControl1.Location = new System.Drawing.Point(460, 6);
-			this.byteControl1.Name = "byteControl1";
-			this.byteControl1.Size = new System.Drawing.Size(592, 407);
-			this.byteControl1.TabIndex = 1;
-			// 
-			// vScrollBar2
-			// 
-			this.vScrollBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left)));
-			this.vScrollBar2.Location = new System.Drawing.Point(1057, 6);
-			this.vScrollBar2.Name = "vScrollBar2";
-			this.vScrollBar2.Size = new System.Drawing.Size(16, 407);
-			this.vScrollBar2.TabIndex = 2;
-			this.vScrollBar2.ValueChanged += new System.EventHandler(this.VScrollBar2ValueChanged);
+			this.tabPage4.Location = new System.Drawing.Point(4, 22);
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage4.Size = new System.Drawing.Size(768, 419);
+			this.tabPage4.TabIndex = 3;
+			this.tabPage4.Text = "Changes";
+			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
@@ -374,6 +386,7 @@ namespace MemConqueror
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.TabPage tabPage4;
 
 		private System.Windows.Forms.VScrollBar vScrollBar2;
 		private MemConqueror.ByteControl byteControl1;
