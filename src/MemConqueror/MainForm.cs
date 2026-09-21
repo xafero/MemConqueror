@@ -306,11 +306,15 @@ namespace MemConqueror
 			var kind = dataTypeBox.GetSelectedItem<DataType>();
 			var text = dataTxtBox.GetText();
 			var dict = Typing.Parse(text, kind).ToDict();
+			if (dict.Count == 0)
+				return;
+			if (lastMem == null)
+				return;
+			foreach (var item in lastMem.ReadAll())
+			{
 
-
-
-
-			;
+				;
+			}
 		}
 	}
 }
