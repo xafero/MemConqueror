@@ -287,6 +287,7 @@ namespace MemConqueror
 			this.dataCndBox.Name = "dataCndBox";
 			this.dataCndBox.Size = new System.Drawing.Size(255, 43);
 			this.dataCndBox.TabIndex = 3;
+			this.dataCndBox.Dock = System.Windows.Forms.DockStyle.Fill;
 			// 
 			// groupBox1
 			// 
@@ -316,15 +317,15 @@ namespace MemConqueror
 			this.dataTypeBox.FormattingEnabled = true;
 			this.dataTypeBox.Location = new System.Drawing.Point(21, 30);
 			this.dataTypeBox.Name = "dataTypeBox";
-			this.dataTypeBox.Size = new System.Drawing.Size(79, 21);
+			this.dataTypeBox.Size = new System.Drawing.Size(71, 21);
 			this.dataTypeBox.TabIndex = 0;
 			this.dataTypeBox.SelectedIndexChanged += new System.EventHandler(this.DataTypeBoxSelectedIndexChanged);
 			// 
 			// dataTxtBox
 			// 
-			this.dataTxtBox.Location = new System.Drawing.Point(111, 30);
+			this.dataTxtBox.Location = new System.Drawing.Point(102, 30);
 			this.dataTxtBox.Name = "dataTxtBox";
-			this.dataTxtBox.Size = new System.Drawing.Size(130, 20);
+			this.dataTxtBox.Size = new System.Drawing.Size(143, 20);
 			this.dataTxtBox.TabIndex = 1;
 			this.dataTxtBox.TextChanged += new System.EventHandler(this.DataTxtBoxTextChanged);
 			// 

@@ -20,6 +20,7 @@ namespace MemConqueror
 		{
 			Icon = ResTool.GetIcon("app.ico");
 			byteControl1.SetItem(this, null);
+			dataCndBox.Font = dataCndBox.Font.SetMonospace(10);
 			dataTypeBox.Items.Clear();
 			foreach (var dataType in Enum.GetValues(typeof(DataType)).Cast<DataType>().Skip(1))
 				dataTypeBox.Items.Add(dataType);
