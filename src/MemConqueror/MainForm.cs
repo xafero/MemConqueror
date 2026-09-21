@@ -311,6 +311,7 @@ namespace MemConqueror
 				return;
 			if (lastMem == null)
 				return;
+			dataGridView3.Rows.Clear();
 			var i = 0;
 			foreach (var item in lastMem.ReadAll())
 			{
@@ -322,9 +323,11 @@ namespace MemConqueror
 					{
 						var addr = (item.Info.BaseAddress + idx).ToInt64();
 						var addrT = string.Format("{0:X8}", addr);
-						Console.WriteLine("    --> " + addrT + " | " + item.ToStr());
+						
+						var dbg = string.Format(" {0} {1} ", addrT, item.ToStr());
 
-
+						object[] vals = new object[] { dbg };
+						dataGridView3.Rows.Add(vals);
 					}
 				}
 			}

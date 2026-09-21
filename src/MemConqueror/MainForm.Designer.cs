@@ -57,6 +57,8 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dataGridView3 = new System.Windows.Forms.DataGridView();
+			this.FunCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +70,7 @@ namespace MemConqueror
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -260,6 +263,7 @@ namespace MemConqueror
 			// 
 			// tabPage4
 			// 
+			this.tabPage4.Controls.Add(this.dataGridView3);
 			this.tabPage4.Controls.Add(this.groupBox2);
 			this.tabPage4.Controls.Add(this.groupBox1);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -282,12 +286,12 @@ namespace MemConqueror
 			// 
 			// dataCndBox
 			// 
-			this.dataCndBox.FormattingEnabled = true;
-			this.dataCndBox.Location = new System.Drawing.Point(6, 19);
-			this.dataCndBox.Name = "dataCndBox";
-			this.dataCndBox.Size = new System.Drawing.Size(255, 43);
-			this.dataCndBox.TabIndex = 3;
 			this.dataCndBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataCndBox.FormattingEnabled = true;
+			this.dataCndBox.Location = new System.Drawing.Point(3, 16);
+			this.dataCndBox.Name = "dataCndBox";
+			this.dataCndBox.Size = new System.Drawing.Size(261, 55);
+			this.dataCndBox.TabIndex = 3;
 			// 
 			// groupBox1
 			// 
@@ -431,6 +435,21 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
+			// dataGridView3
+			// 
+			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FunCol});
+			this.dataGridView3.Location = new System.Drawing.Point(77, 133);
+			this.dataGridView3.Name = "dataGridView3";
+			this.dataGridView3.Size = new System.Drawing.Size(641, 196);
+			this.dataGridView3.TabIndex = 5;
+			// 
+			// FunCol
+			// 
+			this.FunCol.HeaderText = "Fun";
+			this.FunCol.Name = "FunCol";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +476,7 @@ namespace MemConqueror
 			this.statusStrip1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -502,5 +522,7 @@ namespace MemConqueror
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrProtCol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MrTypCol;
 		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.DataGridView dataGridView3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn FunCol;
 	}
 }
