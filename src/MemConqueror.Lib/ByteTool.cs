@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Text;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace MemConqueror.Lib
@@ -6,6 +7,19 @@ namespace MemConqueror.Lib
 	public static class ByteTool
 	{
 		public const int DefaultHexWidth = 16;
+
+		public static string ToHex(this byte?[] bytes)
+		{
+			var bld = new StringBuilder();
+			foreach (var bit in bytes)
+			{
+				if (bit == null)
+					bld.Append($"__");
+				else
+					bld.Append($"{bit:X2}");
+			}
+			return bld.ToString();
+		}
 
 		public static IEnumerable<ByteLine> ToHex(byte[] bytes, int lineNo, int count)
 		{
