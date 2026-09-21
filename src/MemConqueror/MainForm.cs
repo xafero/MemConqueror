@@ -288,16 +288,29 @@ namespace MemConqueror
 		
 		private void RefreshSearchTerms()
 		{
-			var raw = dataTypeBox.SelectedItem;
-			if (raw == null) return;
-			var kind = (DataType)raw;
-			if (kind == default(DataType)) return;
-			var text = dataTxtBox.Text;
-			if (text == null) return;
+			var kind = dataTypeBox.GetSelectedItem<DataType>();
+			if (kind == default(DataType)) 
+				return;
+			var text = dataTxtBox.GetText();
+			if (text == null) 
+				return;
 			dataCndBox.Items.Clear();
 			var dict = Typing.Parse(text, kind).ToDict();
+			const string sp = " ";
 			foreach (var item in dict)
-				dataCndBox.Items.Add(item.Key);
-		}		
+				dataCndBox.Items.Add(sp + item.Key);
+		}
+
+		private void searchBtn_Click(object sender, EventArgs e)
+		{
+			var kind = dataTypeBox.GetSelectedItem<DataType>();
+			var text = dataTxtBox.GetText();
+			var dict = Typing.Parse(text, kind).ToDict();
+
+
+
+
+			;
+		}
 	}
 }

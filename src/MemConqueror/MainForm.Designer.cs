@@ -38,6 +38,7 @@ namespace MemConqueror
 			this.MrProtCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MrTypCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.dataCndBox = new System.Windows.Forms.ListBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.searchBtn = new System.Windows.Forms.Button();
@@ -56,18 +57,17 @@ namespace MemConqueror
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.tabPage4.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.contextMenuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -270,6 +270,16 @@ namespace MemConqueror
 			this.tabPage4.Text = "Changes";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.dataCndBox);
+			this.groupBox2.Location = new System.Drawing.Point(364, 15);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(267, 74);
+			this.groupBox2.TabIndex = 4;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Preview";
+			// 
 			// dataCndBox
 			// 
 			this.dataCndBox.FormattingEnabled = true;
@@ -298,6 +308,7 @@ namespace MemConqueror
 			this.searchBtn.TabIndex = 3;
 			this.searchBtn.Text = "Search";
 			this.searchBtn.UseVisualStyleBackColor = true;
+			this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
 			// 
 			// dataTypeBox
 			// 
@@ -419,16 +430,6 @@ namespace MemConqueror
 			this.refreshToolStripMenuItem.Text = "Refresh";
 			this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItemClick);
 			// 
-			// groupBox2
-			// 
-			this.groupBox2.Controls.Add(this.dataCndBox);
-			this.groupBox2.Location = new System.Drawing.Point(364, 15);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(267, 74);
-			this.groupBox2.TabIndex = 4;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Preview";
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,6 +448,7 @@ namespace MemConqueror
 			this.tabPage3.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.tabPage4.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.contextMenuStrip1.ResumeLayout(false);
@@ -454,7 +456,6 @@ namespace MemConqueror
 			this.statusStrip1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

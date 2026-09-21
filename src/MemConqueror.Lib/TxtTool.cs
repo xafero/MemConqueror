@@ -30,6 +30,11 @@ namespace MemConqueror.Lib
 			var parts = text.Split(sep);
 			var tmp = parts[0] + sep;
 			return tmp;
-		}		
-    }
+		}
+
+        public static string TrimOrNull(this string text)
+        {
+            return string.IsNullOrWhiteSpace(text) ? null : text.Trim();
+        }
+	}
 }

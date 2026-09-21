@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using MemConqueror.Lib;
 
 namespace MemConqueror
 {
@@ -54,6 +55,22 @@ namespace MemConqueror
 				item = row.Cells.Cast<DataGridViewCell>().ToDictionary(
 					k => k.OwningColumn.HeaderText, v => v.Value);
 			return item;
+		}
+
+		public static T GetSelectedItem<T>(this ComboBox box)
+		{
+			var raw = box.SelectedItem;
+			if (raw == null)
+				return default;
+			var res = (T)raw;
+			if (res == null)
+				return default;
+			return res;
+		}
+
+		public static string GetText(this TextBox box)
+		{
+			return TxtTool.TrimOrNull(box.Text);
 		}
 	}
 }
