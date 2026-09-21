@@ -310,16 +310,20 @@ namespace MemConqueror
 				return;
 			if (lastMem == null)
 				return;
+			var i = 0;
 			foreach (var item in lastMem.ReadAll())
 			{
+				i++;
 				var array = item.Buffer;
 				foreach (var pattern in dict.Values)
 				{
 					foreach (var idx in FindTool.IndicesOf(array, pattern))
 					{
-						Console.WriteLine("    --> " + array.Length + " | " + idx);
+						var addr = (item.Info.BaseAddress + idx).ToInt64();
+						var addrT = string.Format("{0:X8}", addr);
+						Console.WriteLine("    --> " + addrT + " | " + item.ToStr());
 
-						;
+
 					}
 				}
 			}

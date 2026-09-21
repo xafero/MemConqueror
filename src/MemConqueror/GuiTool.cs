@@ -70,7 +70,7 @@ namespace MemConqueror
 
 		public static string GetText(this TextBox box)
 		{
-			return TxtTool.TrimOrNull(box.Text);
+			return TxtTool.OrNull(box.Text);
 		}
 	}
 }

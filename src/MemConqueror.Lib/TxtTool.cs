@@ -36,5 +36,10 @@ namespace MemConqueror.Lib
         {
             return string.IsNullOrWhiteSpace(text) ? null : text.Trim();
         }
-	}
+
+        public static string OrNull(this string text)
+        {
+            return string.IsNullOrWhiteSpace(text) ? null : text;
+        }
+    }
 }
