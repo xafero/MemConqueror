@@ -41,13 +41,14 @@
     <Reference Include="System.Management" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ByteLine.cs" />
-	<Compile Include="Bytes.cs" />
+    <Compile Include="Bytes.cs" />
     <Compile Include="ByteTool.cs" />
-	<Compile Include="DataType.cs" />
+    <Compile Include="DataType.cs" />
     <Compile Include="EndMode.cs" />
-	<Compile Include="EnumTool.cs" />
+    <Compile Include="EnumTool.cs" />
     <Compile Include="FontTool.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IByteView.cs" />
@@ -56,16 +57,16 @@
     <Compile Include="LazyReader.cs" />
     <Compile Include="MemGot.cs" />
     <Compile Include="MemInfo.cs" />
-	<Compile Include="MemProtect.cs" />
+    <Compile Include="MemProtect.cs" />
     <Compile Include="MemReader.cs" />
-    <Compile Include="MemState.cs" />	
+    <Compile Include="MemState.cs" />
     <Compile Include="MemTool.cs" />
-	<Compile Include="MemType.cs" />	
+    <Compile Include="MemType.cs" />
     <Compile Include="ProcMemInfo.cs" />
     <Compile Include="ProcTool.cs" />
     <Compile Include="ResTool.cs" />
     <Compile Include="TxtTool.cs" />
-	<Compile Include="Typing.cs" />
+    <Compile Include="Typing.cs" />
     <Compile Include="Win32.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
