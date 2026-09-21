@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace MemConqueror.Lib
 {
     public static class FindTool
     {
+        public static IEnumerable<int> IndicesOf(this byte[] haystack, byte[] pattern)
+        {
+            var start = 0;
+            int idx;
+            while ((idx = haystack.IndexOf(pattern, start)) >= 0)
+            {
+                yield return idx;
+                start = idx + pattern.Length;
+            }
+        }
+
         public static int IndexOf(this byte[] haystack, byte[] pattern, int startIndex = 0)
         {
             if (pattern == null || pattern.Length == 0)
