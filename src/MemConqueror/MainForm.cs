@@ -312,6 +312,9 @@ namespace MemConqueror
 				return;
 			foreach (var item in lastMem.ReadAll())
 			{
+				Console.WriteLine(" * "+item.ToStr()+" ");
+				Console.WriteLine("    --> " + item.Buffer.Length);
+
 
 				;
 			}
