@@ -312,11 +312,16 @@ namespace MemConqueror
 				return;
 			foreach (var item in lastMem.ReadAll())
 			{
-				Console.WriteLine(" * "+item.ToStr()+" ");
-				Console.WriteLine("    --> " + item.Buffer.Length);
+				var array = item.Buffer;
+				foreach (var pattern in dict.Values)
+				{
+					foreach (var idx in FindTool.IndicesOf(array, pattern))
+					{
+						Console.WriteLine("    --> " + array.Length + " | " + idx);
 
-
-				;
+						;
+					}
+				}
 			}
 		}
 	}
